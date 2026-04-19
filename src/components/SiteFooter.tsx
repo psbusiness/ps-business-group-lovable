@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import logo from "@/assets/ps-logo.png";
 
 export function SiteFooter() {
   return (
@@ -7,10 +8,10 @@ export function SiteFooter() {
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 border border-gold flex items-center justify-center font-display text-gold">PS</div>
+              <img src={logo} alt="PS Business Group" className="h-12 w-12 object-contain" />
               <div>
                 <div className="font-display text-lg">PS Business Group</div>
-                <div className="text-[10px] uppercase tracking-[0.25em] text-gold-soft/70">Holding</div>
+                <div className="text-[10px] uppercase tracking-[0.25em] text-primary-foreground/60">Holding</div>
               </div>
             </div>
             <p className="text-sm text-primary-foreground/70 max-w-sm leading-relaxed">
