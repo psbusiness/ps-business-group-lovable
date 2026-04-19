@@ -15,7 +15,7 @@ export function SiteFooter() {
               </div>
             </div>
             <p className="text-sm text-primary-foreground/70 max-w-sm leading-relaxed">
-              Um ecossistema de empresas em setores estratégicos — construído sobre excelência, longevidade e visão de futuro.
+              Conexões que impulsionam o futuro. Inteligência empresarial, gestão eficiente e visão de longo prazo em diferentes setores e mercados.
             </p>
           </div>
 
@@ -40,7 +40,7 @@ export function SiteFooter() {
 
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 text-xs text-primary-foreground/50">
           <div>© {new Date().getFullYear()} PS Business Group. Todos os direitos reservados.</div>
-          <div className="font-display italic">Vincit qui se vincit</div>
+          <div className="font-display italic">Construindo presença.</div>
         </div>
       </div>
     </footer>

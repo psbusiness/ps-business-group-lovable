@@ -28,11 +28,11 @@ function ContatoPage() {
             <span className="h-px w-12 bg-gold" />
             <span className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground">Contato</span>
           </div>
-          <h1 className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] tracking-tight text-balance">
-            Vamos <span className="italic text-gold">conversar</span>.
+          <h1 className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.98] tracking-tight text-balance">
+            Conexões que <span className="italic">impulsionam o futuro</span>.
           </h1>
           <p className="mt-8 max-w-xl text-lg text-muted-foreground">
-            Para parcerias, oportunidades ou imprensa, deixe sua mensagem. Respondemos pessoalmente.
+            Para parcerias, oportunidades de negócio ou imprensa, deixe sua mensagem. Cada parceria representa mais do que um acordo — representa confiança e visão compartilhada.
           </p>
         </div>
       </section>
@@ -41,18 +41,18 @@ function ContatoPage() {
         <div className="max-w-5xl mx-auto px-6 lg:px-12 grid md:grid-cols-5 gap-16">
           <div className="md:col-span-2 space-y-8">
             <div>
-              <div className="text-[11px] uppercase tracking-[0.25em] text-gold mb-2">E-mail</div>
-              <a href="mailto:contato@psbusinessgroup.com.br" className="hover:text-gold transition-colors">
+              <div className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-2">E-mail</div>
+              <a href="mailto:contato@psbusinessgroup.com.br" className="hover:opacity-70 transition-opacity">
                 contato@psbusinessgroup.com.br
               </a>
             </div>
             <div>
-              <div className="text-[11px] uppercase tracking-[0.25em] text-gold mb-2">Sede</div>
-              <p>São Paulo · Brasil</p>
+              <div className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-2">Atuação</div>
+              <p>Binacional · Brasil</p>
             </div>
             <div>
-              <div className="text-[11px] uppercase tracking-[0.25em] text-gold mb-2">Atuação</div>
-              <p className="text-muted-foreground">10 empresas em 9 setores estratégicos</p>
+              <div className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-2">Grupo</div>
+              <p className="text-muted-foreground">9 empresas em setores estratégicos</p>
             </div>
           </div>
 
@@ -100,7 +100,7 @@ function Field({ label, id, type = "text", required }: { label: string; id: stri
   return (
     <div>
       <label htmlFor={id} className="block text-[11px] uppercase tracking-[0.25em] text-muted-foreground mb-3">
-        {label} {required && <span className="text-gold">*</span>}
+        {label} {required && <span className="text-foreground">*</span>}
       </label>
       <input
         id={id}

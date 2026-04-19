@@ -24,14 +24,14 @@ function EmpresasPage() {
       <section className="bg-noir text-primary-foreground grain pt-40 pb-24 lg:pt-52 lg:pb-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex items-center gap-3 mb-8">
-            <span className="h-px w-12 bg-gold" />
-            <span className="text-[11px] uppercase tracking-[0.3em] text-gold">Portfólio</span>
+            <span className="h-px w-12 bg-white/40" />
+            <span className="text-[11px] uppercase tracking-[0.3em] text-white/70">Empresas do grupo</span>
           </div>
-          <h1 className="font-display text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.95] tracking-tight max-w-4xl text-balance">
-            Dez empresas. <span className="italic text-gold-soft">Uma visão.</span>
+          <h1 className="font-display text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.98] tracking-tight max-w-4xl text-balance">
+            Um ecossistema de <span className="italic text-gold-soft">crescimento</span>.
           </h1>
-          <p className="mt-8 max-w-2xl text-lg text-primary-foreground/70 leading-relaxed">
-            Cada negócio do grupo opera com autonomia em seu setor, compartilhando uma cultura comum de excelência, ética e construção de longo prazo.
+          <p className="mt-8 max-w-2xl text-lg text-primary-foreground/75 leading-relaxed">
+            Conectamos oportunidades, desenvolvemos negócios e fortalecemos empresas em diferentes setores e mercados — todas guiadas pelos mesmos princípios de transparência, segurança, performance e expansão estratégica.
           </p>
         </div>
       </section>
