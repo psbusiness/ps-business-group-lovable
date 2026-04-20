@@ -6,7 +6,7 @@ export const Route = createFileRoute("/sobre")({
   head: () => ({
     meta: [
       { title: "Sobre — PS Business Group" },
-      { name: "description", content: "Conheça o PS Business Group: holding empresarial baseada em inteligência empresarial, gestão eficiente e visão de longo prazo. Pensar globalmente, atuar estrategicamente, crescer de forma estruturada." },
+      { name: "description", content: "Conheça o PS Business Group: grupo empresarial baseado em inteligência empresarial, gestão eficiente e visão de longo prazo. Pensar globalmente, atuar estrategicamente, crescer de forma estruturada." },
       { property: "og:title", content: "Sobre — PS Business Group" },
       { property: "og:description", content: "Conexões que impulsionam o futuro." },
     ],

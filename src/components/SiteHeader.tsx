@@ -42,7 +42,7 @@ export function SiteHeader() {
           <img
             src={logo}
             alt="PS Business Group"
-            className={`h-10 w-10 object-contain transition-all ${onDark ? "invert brightness-200" : ""}`}
+            className="h-14 w-14 object-contain"
           />
           <div className={`leading-tight ${onDark ? "text-white" : "text-foreground"}`}>
             <div className="font-display text-base tracking-wide">PS Business</div>

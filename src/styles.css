@@ -39,32 +39,32 @@
 :root {
   --radius: 0.5rem;
 
-  /* Monochrome editorial palette — preto, cinzas, branco */
-  --background: oklch(1 0 0);                /* pure white */
-  --foreground: oklch(0.15 0 0);             /* near-black ink */
+  /* Monochrome editorial palette — predominância de cinzas, sem branco puro */
+  --background: oklch(0.94 0 0);             /* cinza claro como base (substitui o branco) */
+  --foreground: oklch(0.18 0 0);             /* near-black ink */
   --ink: oklch(0.08 0 0);
-  --cream: oklch(0.96 0 0);                  /* light grey surface */
-  /* "gold" tokens repurposed as mid-grey accents to keep monochrome look */
-  --gold: oklch(0.55 0 0);                   /* mid grey */
-  --gold-soft: oklch(0.78 0 0);              /* soft grey */
+  --cream: oklch(0.88 0 0);                  /* cinza mais marcado para seções alternadas */
+  /* tons de cinza para acentos */
+  --gold: oklch(0.5 0 0);                    /* mid grey */
+  --gold-soft: oklch(0.72 0 0);              /* soft grey */
 
-  --card: oklch(1 0 0);
+  --card: oklch(0.96 0 0);
   --card-foreground: var(--foreground);
-  --popover: oklch(1 0 0);
+  --popover: oklch(0.96 0 0);
   --popover-foreground: var(--foreground);
 
   --primary: oklch(0.08 0 0);                /* black */
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.95 0 0);
+  --primary-foreground: oklch(0.94 0 0);
+  --secondary: oklch(0.88 0 0);
   --secondary-foreground: var(--foreground);
-  --muted: oklch(0.95 0 0);
-  --muted-foreground: oklch(0.45 0 0);
+  --muted: oklch(0.9 0 0);
+  --muted-foreground: oklch(0.42 0 0);
   --accent: var(--gold);
   --accent-foreground: oklch(0.08 0 0);
   --destructive: oklch(0.55 0.22 25);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.88 0 0);
-  --input: oklch(0.92 0 0);
+  --destructive-foreground: oklch(0.94 0 0);
+  --border: oklch(0.82 0 0);
+  --input: oklch(0.86 0 0);
   --ring: oklch(0.5 0 0);
 
   /* Gradients & effects */

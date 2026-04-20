@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
           "No PS Business Group, cada parceria representa confiança, visão compartilhada e compromisso com crescimento sustentável. Conectamos oportunidades, desenvolvemos negócios e fortalecemos empresas em diferentes setores.",
       },
       { property: "og:title", content: "PS Business Group" },
-      { property: "og:description", content: "Holding empresarial — conexões que impulsionam o futuro." },
+      { property: "og:description", content: "Grupo empresarial — conexões que impulsionam o futuro." },
     ],
   }),
   component: HomePage,
@@ -36,7 +36,7 @@ function HomePage() {
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="mx-auto h-44 lg:h-60 w-auto object-contain mb-12 invert brightness-200"
+            className="mx-auto h-64 lg:h-80 w-auto object-contain mb-12 bg-white p-6 shadow-elegant"
           />
 
           <motion.div
@@ -46,7 +46,7 @@ function HomePage() {
             className="flex items-center justify-center gap-3 mb-8"
           >
             <span className="h-px w-12 bg-white/40" />
-            <span className="text-[11px] uppercase tracking-[0.3em] text-white/70">Holding empresarial</span>
+            <span className="text-[11px] uppercase tracking-[0.3em] text-white/70">Grupo empresarial</span>
             <span className="h-px w-12 bg-white/40" />
           </motion.div>
 
