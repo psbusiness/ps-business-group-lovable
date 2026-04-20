@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { CompanyCard } from "@/components/CompanyCard";
 import { companies } from "@/data/companies";
-import logo from "@/assets/ps-logo.png";
+import logo from "@/assets/ps-logo-black.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({

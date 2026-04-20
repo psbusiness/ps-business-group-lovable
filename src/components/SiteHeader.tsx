@@ -1,7 +1,7 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/ps-logo.png";
+import logo from "@/assets/ps-logo-black.png";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
