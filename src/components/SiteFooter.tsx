@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
             <div className="flex items-center gap-3 mb-6">
-              <img src={logo} alt="PS Business Group" className="h-12 w-12 object-contain" />
+              <img src={logo} alt="PS Business Group" className="h-12 w-12 object-contain invert brightness-200" />
               <div>
                 <div className="font-display text-lg">PS Business Group</div>
                 <div className="text-[10px] uppercase tracking-[0.25em] text-primary-foreground/60">Holding</div>
@@ -20,17 +20,17 @@ export function SiteFooter() {
           </div>
 
           <div className="md:col-span-3">
-            <div className="text-[11px] uppercase tracking-[0.25em] text-gold mb-5">Navegação</div>
+            <div className="text-[11px] uppercase tracking-[0.25em] text-white/50 mb-5">Navegação</div>
             <ul className="space-y-3 text-sm">
-              <li><Link to="/" className="hover:text-gold transition-colors">Início</Link></li>
-              <li><Link to="/empresas" className="hover:text-gold transition-colors">Empresas</Link></li>
-              <li><Link to="/sobre" className="hover:text-gold transition-colors">Sobre</Link></li>
-              <li><Link to="/contato" className="hover:text-gold transition-colors">Contato</Link></li>
+              <li><Link to="/" className="hover:text-white transition-colors">Início</Link></li>
+              <li><Link to="/empresas" className="hover:text-white transition-colors">Empresas</Link></li>
+              <li><Link to="/sobre" className="hover:text-white transition-colors">Sobre</Link></li>
+              <li><Link to="/contato" className="hover:text-white transition-colors">Contato</Link></li>
             </ul>
           </div>
 
           <div className="md:col-span-4">
-            <div className="text-[11px] uppercase tracking-[0.25em] text-gold mb-5">Contato</div>
+            <div className="text-[11px] uppercase tracking-[0.25em] text-white/50 mb-5">Contato</div>
             <ul className="space-y-3 text-sm text-primary-foreground/70">
               <li>contato@psbusinessgroup.com.br</li>
               <li>São Paulo · Brasil</li>

@@ -36,7 +36,7 @@ function HomePage() {
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="mx-auto h-44 lg:h-60 w-auto object-contain mb-12"
+            className="mx-auto h-44 lg:h-60 w-auto object-contain mb-12 invert brightness-200"
           />
 
           <motion.div
