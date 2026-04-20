@@ -43,6 +43,7 @@ export function SiteHeader() {
             src={logo}
             alt="PS Business Group"
             className="h-14 w-14 object-contain"
+            style={onDark ? { filter: "invert(1) brightness(2)" } : undefined}
           />
           <div className={`leading-tight ${onDark ? "text-white" : "text-foreground"}`}>
             <div className="font-display text-base tracking-wide">PS Business</div>
