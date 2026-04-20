@@ -9,7 +9,7 @@ export const Route = createFileRoute("/contato")({
       { title: "Contato — PS Business Group" },
       { name: "description", content: "Entre em contato com o PS Business Group para parcerias, oportunidades de negócio e iniciativas estratégicas." },
       { property: "og:title", content: "Contato — PS Business Group" },
-      { property: "og:description", content: "Fale com a holding." },
+      { property: "og:description", content: "Fale com o grupo." },
     ],
   }),
   component: ContatoPage,

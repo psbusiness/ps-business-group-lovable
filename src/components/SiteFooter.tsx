@@ -7,11 +7,11 @@ export function SiteFooter() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20">
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
-            <div className="flex items-center gap-3 mb-6">
-              <img src={logo} alt="PS Business Group" className="h-12 w-12 object-contain invert brightness-200" />
+            <div className="flex items-center gap-4 mb-6">
+              <img src={logo} alt="PS Business Group" className="h-16 w-16 object-contain bg-white p-1.5" />
               <div>
                 <div className="font-display text-lg">PS Business Group</div>
-                <div className="text-[10px] uppercase tracking-[0.25em] text-primary-foreground/60">Holding</div>
+                <div className="text-[10px] uppercase tracking-[0.25em] text-primary-foreground/60">Grupo empresarial</div>
               </div>
             </div>
             <p className="text-sm text-primary-foreground/70 max-w-sm leading-relaxed">
