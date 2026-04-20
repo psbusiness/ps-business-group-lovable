@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { CompanyCard } from "@/components/CompanyCard";
 import { companies } from "@/data/companies";
-import logo from "@/assets/ps-logo.png";
+import logo from "@/assets/ps-logo-black.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,7 +36,8 @@ function HomePage() {
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="mx-auto h-64 lg:h-80 w-auto object-contain mb-12 bg-white p-6 shadow-elegant"
+            className="mx-auto h-56 lg:h-72 w-auto object-contain mb-12 invert brightness-0 contrast-200"
+            style={{ filter: "invert(1) brightness(2)" }}
           />
 
           <motion.div
