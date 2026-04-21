@@ -34,7 +34,6 @@ function HomePage() {
             src={logo}
             alt="PS Business Group"
             className="mx-auto h-56 lg:h-72 w-auto object-contain mb-12"
-            style={{ filter: "invert(1) brightness(2)" }}
           />
 
           <div className="flex items-center justify-center gap-3 mb-8">
