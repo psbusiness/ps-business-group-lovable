@@ -30,12 +30,9 @@ function HomePage() {
       {/* HERO */}
       <section className="relative bg-noir text-primary-foreground grain overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12 pt-40 pb-32 lg:pt-52 lg:pb-44 text-center">
-          <motion.img
+          <img
             src={logo}
             alt="PS Business Group"
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
             className="mx-auto h-56 lg:h-72 w-auto object-contain mb-12"
             style={{ filter: "invert(1) brightness(2)" }}
           />
@@ -46,14 +43,9 @@ function HomePage() {
             <span className="h-px w-12 bg-white/40" />
           </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="font-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1.05] tracking-tight max-w-4xl mx-auto text-balance"
-          >
+          <h1 className="font-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1.05] tracking-tight max-w-4xl mx-auto text-balance">
             Conexões que <span className="italic text-gold-soft">impulsionam o futuro</span>.
-          </motion.h1>
+          </h1>
 
           <p className="mt-10 max-w-2xl mx-auto text-lg text-primary-foreground/75 leading-relaxed text-pretty">
             No PS Business Group, acreditamos que cada parceria representa mais do que um acordo. Representa confiança, visão compartilhada e compromisso com crescimento sustentável.
