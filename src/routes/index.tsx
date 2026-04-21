@@ -40,41 +40,26 @@ function HomePage() {
             style={{ filter: "invert(1) brightness(2)" }}
           />
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex items-center justify-center gap-3 mb-8"
-          >
+          <div className="flex items-center justify-center gap-3 mb-8">
             <span className="h-px w-12 bg-white/40" />
             <span className="text-[11px] uppercase tracking-[0.3em] text-white/70">Grupo empresarial</span>
             <span className="h-px w-12 bg-white/40" />
-          </motion.div>
+          </div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
+            transition={{ duration: 1, delay: 0.2 }}
             className="font-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1.05] tracking-tight max-w-4xl mx-auto text-balance"
           >
             Conexões que <span className="italic text-gold-soft">impulsionam o futuro</span>.
           </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-10 max-w-2xl mx-auto text-lg text-primary-foreground/75 leading-relaxed text-pretty"
-          >
+          <p className="mt-10 max-w-2xl mx-auto text-lg text-primary-foreground/75 leading-relaxed text-pretty">
             No PS Business Group, acreditamos que cada parceria representa mais do que um acordo. Representa confiança, visão compartilhada e compromisso com crescimento sustentável.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="mt-12 flex flex-wrap justify-center items-center gap-5"
-          >
+          <div className="mt-12 flex flex-wrap justify-center items-center gap-5">
             <Link
               to="/empresas"
               className="group inline-flex items-center gap-3 bg-primary-foreground text-primary px-8 py-4 text-sm uppercase tracking-[0.2em] hover:bg-gold-soft hover:text-primary transition-all"
@@ -88,7 +73,7 @@ function HomePage() {
             >
               Sobre o grupo
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
 
