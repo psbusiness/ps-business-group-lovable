@@ -71,5 +71,12 @@ export const companies: Company[] = [
     description: "Cuidado premium para veículos de alto padrão, unindo expertise técnica, estética e performance.",
     url: "https://www.pro96automotive.com.br/",
   },
+  {
+    slug: "white-tiger",
+    name: "White Tiger",
+    sector: "Lifestyle & Marca",
+    description: "Marca autoral com identidade forte, unindo design, atitude e presença em produtos que traduzem performance e estilo.",
+    url: "http://www.whitetigeroficial.com.br/",
+  },
 ];
 
