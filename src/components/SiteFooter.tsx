@@ -12,7 +12,6 @@ export function SiteFooter() {
                 src={logo}
                 alt="PS Business Group"
                 className="h-14 w-14 object-contain"
-                style={{ filter: "invert(1) brightness(2)" }}
               />
               <div>
                 <div className="font-display text-lg">PS Business Group</div>
