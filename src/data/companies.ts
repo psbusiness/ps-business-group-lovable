@@ -15,7 +15,7 @@ export type Company = {
   sector: string;
   description: string;
   url: string;
-  logo: string;
+  logo?: string;
   logoBg?: "light" | "dark";
   established?: string;
 };
