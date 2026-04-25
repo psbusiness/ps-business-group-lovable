@@ -32,16 +32,16 @@ function HomePage() {
       {/* HERO */}
       <section className="relative bg-noir text-primary-foreground grain overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: `url(${skylineBg})` }}
+          className="absolute inset-0 bg-cover bg-center opacity-25 sm:opacity-30"
+          style={{ backgroundImage: `url(${skylineBg})`, backgroundPosition: "center bottom" }}
           aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-noir/70 via-noir/60 to-noir" aria-hidden="true" />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 pt-40 pb-32 lg:pt-52 lg:pb-44 text-center">
+        <div className="absolute inset-0 bg-gradient-to-b from-noir/80 via-noir/65 to-noir" aria-hidden="true" />
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-24 sm:pt-40 sm:pb-32 lg:pt-52 lg:pb-44 text-center">
           <img
             src={logo}
             alt="PS Business Group"
-            className="mx-auto h-56 lg:h-72 w-auto object-contain mb-12"
+            className="mx-auto h-36 sm:h-48 md:h-56 lg:h-72 w-auto object-contain mb-8 sm:mb-12"
           />
 
           <div className="flex items-center justify-center gap-3 mb-8">
