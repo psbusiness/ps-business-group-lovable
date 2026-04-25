@@ -32,16 +32,16 @@ function HomePage() {
       {/* HERO */}
       <section className="relative bg-noir text-primary-foreground grain overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: `url(${skylineBg})` }}
+          className="absolute inset-0 bg-cover bg-center opacity-25 sm:opacity-30"
+          style={{ backgroundImage: `url(${skylineBg})`, backgroundPosition: "center bottom" }}
           aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-noir/70 via-noir/60 to-noir" aria-hidden="true" />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 pt-40 pb-32 lg:pt-52 lg:pb-44 text-center">
+        <div className="absolute inset-0 bg-gradient-to-b from-noir/80 via-noir/65 to-noir" aria-hidden="true" />
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-24 sm:pt-40 sm:pb-32 lg:pt-52 lg:pb-44 text-center">
           <img
             src={logo}
             alt="PS Business Group"
-            className="mx-auto h-56 lg:h-72 w-auto object-contain mb-12"
+            className="mx-auto h-36 sm:h-48 md:h-56 lg:h-72 w-auto object-contain mb-8 sm:mb-12"
           />
 
           <div className="flex items-center justify-center gap-3 mb-8">
@@ -140,14 +140,14 @@ function HomePage() {
       </section>
 
       {/* GESTÃO INTEGRADA */}
-      <section className="py-28 lg:py-36">
-        <div className="max-w-6xl mx-auto px-6 lg:px-12 grid md:grid-cols-12 gap-12 items-center">
+      <section className="py-20 sm:py-24 lg:py-36">
+        <div className="max-w-6xl mx-auto px-6 lg:px-12 grid md:grid-cols-12 gap-10 md:gap-12 items-center">
           <div className="md:col-span-5">
-            <div className="overflow-hidden">
+            <div className="overflow-hidden aspect-square md:aspect-auto max-h-[480px]">
               <img
                 src={handshakeImg}
                 alt="Parceria estratégica PS Business Group"
-                className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 loading="lazy"
               />
             </div>
@@ -157,7 +157,7 @@ function HomePage() {
               <span className="h-px w-12 bg-foreground" />
               <span className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground">Gestão</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl leading-tight text-balance mb-8">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl leading-tight text-balance mb-6 sm:mb-8">
               Gestão integrada, resultados consistentes.
             </h2>
             <div className="space-y-6 text-lg leading-relaxed text-foreground/85">
