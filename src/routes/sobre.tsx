@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import officeImg from "@/assets/ps-office.png";
 
 export const Route = createFileRoute("/sobre")({
   head: () => ({
@@ -82,6 +83,14 @@ function SobrePage() {
               A base de um grande grupo está na sua capacidade de organizar, padronizar e evoluir continuamente — e é exatamente isso que construímos todos os dias.
             </p>
           </div>
+        </div>
+        <div className="max-w-6xl mx-auto px-6 lg:px-12 mt-16">
+          <img
+            src={officeImg}
+            alt="Ambiente corporativo do PS Business Group"
+            className="w-full h-auto object-cover"
+            loading="lazy"
+          />
         </div>
       </section>
 
