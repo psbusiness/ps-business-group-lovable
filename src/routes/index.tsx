@@ -31,6 +31,12 @@ function HomePage() {
 
       {/* HERO */}
       <section className="relative bg-noir text-primary-foreground grain overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-30"
+          style={{ backgroundImage: `url(${skylineBg})` }}
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-noir/70 via-noir/60 to-noir" aria-hidden="true" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12 pt-40 pb-32 lg:pt-52 lg:pb-44 text-center">
           <img
             src={logo}
@@ -135,26 +141,36 @@ function HomePage() {
 
       {/* GESTÃO INTEGRADA */}
       <section className="py-28 lg:py-36">
-        <div className="max-w-6xl mx-auto px-6 lg:px-12 grid md:grid-cols-12 gap-12 items-start">
+        <div className="max-w-6xl mx-auto px-6 lg:px-12 grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-5">
+            <div className="overflow-hidden">
+              <img
+                src={handshakeImg}
+                alt="Parceria estratégica PS Business Group"
+                className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div className="md:col-span-7">
             <div className="flex items-center gap-3 mb-6">
               <span className="h-px w-12 bg-foreground" />
               <span className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground">Gestão</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl leading-tight text-balance">
+            <h2 className="font-display text-4xl md:text-5xl leading-tight text-balance mb-8">
               Gestão integrada, resultados consistentes.
             </h2>
-          </div>
-          <div className="md:col-span-7 space-y-6 text-lg leading-relaxed text-foreground/85">
-            <p>
-              Trabalhamos com uma gestão integrada, onde processos, pessoas e tecnologia caminham juntos para garantir resultados consistentes e escaláveis.
-            </p>
-            <p>
-              Nossa atuação abrange múltiplos setores, com foco em <strong>gestão empresarial</strong>, <strong>investimentos estratégicos</strong>, <strong>expansão de negócios</strong>, <strong>estruturação corporativa</strong> e <strong>inteligência operacional</strong>.
-            </p>
-            <p className="text-muted-foreground">
-              Mais do que administrar empresas, estruturamos sistemas que funcionam de forma sólida, previsível e orientada a crescimento.
-            </p>
+            <div className="space-y-6 text-lg leading-relaxed text-foreground/85">
+              <p>
+                Trabalhamos com uma gestão integrada, onde processos, pessoas e tecnologia caminham juntos para garantir resultados consistentes e escaláveis.
+              </p>
+              <p>
+                Nossa atuação abrange múltiplos setores, com foco em <strong>gestão empresarial</strong>, <strong>investimentos estratégicos</strong>, <strong>expansão de negócios</strong>, <strong>estruturação corporativa</strong> e <strong>inteligência operacional</strong>.
+              </p>
+              <p className="text-muted-foreground">
+                Mais do que administrar empresas, estruturamos sistemas que funcionam de forma sólida, previsível e orientada a crescimento.
+              </p>
+            </div>
           </div>
         </div>
       </section>
