@@ -5,6 +5,8 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { CompanyCard } from "@/components/CompanyCard";
 import { companies } from "@/data/companies";
 import logo from "@/assets/ps-logo-black.png";
+import skylineBg from "@/assets/ps-skyline.png";
+import handshakeImg from "@/assets/ps-handshake.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
