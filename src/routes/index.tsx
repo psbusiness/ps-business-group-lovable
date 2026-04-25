@@ -29,50 +29,64 @@ function HomePage() {
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
 
-      {/* HERO */}
-      <section className="relative bg-noir text-primary-foreground grain overflow-hidden">
+      {/* HERO — imersivo, skyline preenchendo o fundo */}
+      <section className="relative bg-noir text-primary-foreground grain overflow-hidden min-h-[100svh] flex items-center">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-25 sm:opacity-30"
-          style={{ backgroundImage: `url(${skylineBg})`, backgroundPosition: "center bottom" }}
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${skylineBg})`,
+            backgroundPosition: "center center",
+          }}
           aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-noir/80 via-noir/65 to-noir" aria-hidden="true" />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-24 sm:pt-40 sm:pb-32 lg:pt-52 lg:pb-44 text-center">
+        {/* Cinematic overlays */}
+        <div className="absolute inset-0 bg-gradient-to-b from-noir/70 via-noir/40 to-noir" aria-hidden="true" />
+        <div className="absolute inset-0 bg-gradient-to-r from-noir/80 via-transparent to-noir/60" aria-hidden="true" />
+
+        <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-12 pt-36 pb-24 sm:pt-44 sm:pb-32 lg:pt-40 lg:pb-40">
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-3 mb-8">
+              <span className="h-px w-12 bg-white/50" />
+              <span className="text-[11px] uppercase tracking-[0.3em] text-white/70">Grupo empresarial</span>
+            </div>
+
+            <h1 className="font-display text-[clamp(3rem,8vw,7rem)] leading-[0.95] tracking-tight text-balance">
+              Conexões que <span className="italic text-gold-soft">impulsionam</span> o futuro.
+            </h1>
+
+            <p className="mt-10 max-w-xl text-lg sm:text-xl text-primary-foreground/80 leading-relaxed text-pretty">
+              Cada parceria representa mais do que um acordo: confiança, visão compartilhada e compromisso com crescimento sustentável.
+            </p>
+
+            <div className="mt-12 flex flex-wrap items-center gap-5">
+              <Link
+                to="/empresas"
+                className="group inline-flex items-center gap-3 bg-primary-foreground text-primary px-8 py-4 text-sm uppercase tracking-[0.2em] hover:bg-gold-soft transition-all"
+              >
+                Conheça as empresas
+                <span className="transition-transform group-hover:translate-x-1">→</span>
+              </Link>
+              <Link
+                to="/sobre"
+                className="inline-flex items-center gap-3 border border-white/30 px-8 py-4 text-sm uppercase tracking-[0.2em] hover:bg-white/5 transition-all"
+              >
+                Sobre o grupo
+              </Link>
+            </div>
+          </div>
+
+          {/* Logo discreto no canto */}
           <img
             src={logo}
             alt="PS Business Group"
-            className="mx-auto h-36 sm:h-48 md:h-56 lg:h-72 w-auto object-contain mb-8 sm:mb-12"
+            className="hidden md:block absolute bottom-12 right-12 h-24 lg:h-32 w-auto object-contain opacity-90 invert"
           />
+        </div>
 
-          <div className="flex items-center justify-center gap-3 mb-8">
-            <span className="h-px w-12 bg-white/40" />
-            <span className="text-[11px] uppercase tracking-[0.3em] text-white/70">Grupo empresarial</span>
-            <span className="h-px w-12 bg-white/40" />
-          </div>
-
-          <h1 className="font-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1.05] tracking-tight max-w-4xl mx-auto text-balance">
-            Conexões que <span className="italic text-gold-soft">impulsionam o futuro</span>.
-          </h1>
-
-          <p className="mt-10 max-w-2xl mx-auto text-lg text-primary-foreground/75 leading-relaxed text-pretty">
-            No PS Business Group, acreditamos que cada parceria representa mais do que um acordo. Representa confiança, visão compartilhada e compromisso com crescimento sustentável.
-          </p>
-
-          <div className="mt-12 flex flex-wrap justify-center items-center gap-5">
-            <Link
-              to="/empresas"
-              className="group inline-flex items-center gap-3 bg-primary-foreground text-primary px-8 py-4 text-sm uppercase tracking-[0.2em] hover:bg-gold-soft hover:text-primary transition-all"
-            >
-              Conheça as empresas
-              <span className="transition-transform group-hover:translate-x-1">→</span>
-            </Link>
-            <Link
-              to="/sobre"
-              className="inline-flex items-center gap-3 border border-white/30 px-8 py-4 text-sm uppercase tracking-[0.2em] hover:bg-white/5 transition-all"
-            >
-              Sobre o grupo
-            </Link>
-          </div>
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 text-white/50 text-[10px] uppercase tracking-[0.3em]">
+          <span>Role</span>
+          <span className="h-10 w-px bg-white/30" />
         </div>
       </section>
 
