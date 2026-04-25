@@ -140,14 +140,14 @@ function HomePage() {
       </section>
 
       {/* GESTÃO INTEGRADA */}
-      <section className="py-28 lg:py-36">
-        <div className="max-w-6xl mx-auto px-6 lg:px-12 grid md:grid-cols-12 gap-12 items-center">
+      <section className="py-20 sm:py-24 lg:py-36">
+        <div className="max-w-6xl mx-auto px-6 lg:px-12 grid md:grid-cols-12 gap-10 md:gap-12 items-center">
           <div className="md:col-span-5">
-            <div className="overflow-hidden">
+            <div className="overflow-hidden aspect-square md:aspect-auto max-h-[480px]">
               <img
                 src={handshakeImg}
                 alt="Parceria estratégica PS Business Group"
-                className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 loading="lazy"
               />
             </div>
@@ -157,7 +157,7 @@ function HomePage() {
               <span className="h-px w-12 bg-foreground" />
               <span className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground">Gestão</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl leading-tight text-balance mb-8">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl leading-tight text-balance mb-6 sm:mb-8">
               Gestão integrada, resultados consistentes.
             </h2>
             <div className="space-y-6 text-lg leading-relaxed text-foreground/85">

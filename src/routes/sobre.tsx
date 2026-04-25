@@ -84,13 +84,15 @@ function SobrePage() {
             </p>
           </div>
         </div>
-        <div className="max-w-6xl mx-auto px-6 lg:px-12 mt-16">
-          <img
-            src={officeImg}
-            alt="Ambiente corporativo do PS Business Group"
-            className="w-full h-auto object-cover"
-            loading="lazy"
-          />
+        <div className="max-w-6xl mx-auto px-6 lg:px-12 mt-12 sm:mt-16">
+          <div className="overflow-hidden aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9]">
+            <img
+              src={officeImg}
+              alt="Ambiente corporativo do PS Business Group"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
 
