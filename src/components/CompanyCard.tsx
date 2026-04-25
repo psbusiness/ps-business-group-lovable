@@ -43,7 +43,7 @@ export function CompanyCard({ company, index }: { company: Company; index: numbe
           />
         ) : (
           <div
-            className="flex h-24 w-24 items-center justify-center rounded-full border border-foreground/20 text-foreground/70 font-display text-2xl tracking-wider"
+            className="flex h-24 w-24 items-center justify-center rounded-full border border-gold/40 text-foreground/70 font-display text-2xl tracking-wider"
             aria-label={`Iniciais ${company.name}`}
           >
             {getInitials(company.name)}
