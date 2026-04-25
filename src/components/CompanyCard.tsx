@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import type { Company } from "@/data/companies";
 
 export function CompanyCard({ company, index }: { company: Company; index: number }) {
+  const logoBgClass = company.logoBg === "dark" ? "bg-noir" : "bg-white";
+
   return (
     <motion.a
       href={company.url}
@@ -13,8 +15,17 @@ export function CompanyCard({ company, index }: { company: Company; index: numbe
       transition={{ duration: 0.6, delay: (index % 4) * 0.08, ease: [0.22, 1, 0.36, 1] }}
       className="group relative block bg-card border border-border hover:border-gold transition-all duration-500 overflow-hidden"
     >
-      <div className="p-8 lg:p-10 h-full flex flex-col min-h-[320px]">
-        <div className="flex items-start justify-between mb-8">
+      <div className={`relative ${logoBgClass} h-44 flex items-center justify-center overflow-hidden border-b border-border`}>
+        <img
+          src={company.logo}
+          alt={`Logo ${company.name}`}
+          loading="lazy"
+          className="max-h-28 max-w-[70%] object-contain transition-transform duration-700 group-hover:scale-105"
+        />
+      </div>
+
+      <div className="p-8 lg:p-10 h-full flex flex-col min-h-[260px]">
+        <div className="flex items-start justify-between mb-6">
           <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
             {String(index + 1).padStart(2, "0")} / {company.sector}
           </span>
