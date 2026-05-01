@@ -30,7 +30,7 @@ function HomePage() {
       <SiteHeader />
 
       {/* HERO — skyline noturna preenchendo o fundo */}
-      <section className="relative bg-noir text-primary-foreground overflow-hidden min-h-[100svh] flex items-center">
+      <section className="relative bg-noir text-foreground overflow-hidden min-h-[100svh] flex items-center">
         <div
           className="absolute inset-0 bg-cover bg-center scale-105"
           style={{
@@ -196,7 +196,7 @@ function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-noir text-primary-foreground py-28 lg:py-36 grain relative overflow-hidden">
+      <section className="bg-noir text-foreground py-28 lg:py-36 grain relative overflow-hidden">
         <div className="relative max-w-4xl mx-auto px-6 lg:px-12 text-center">
           <div className="flex items-center justify-center gap-3 mb-8">
             <span className="h-px w-12 bg-white/40" />
@@ -206,7 +206,7 @@ function HomePage() {
           <h2 className="font-display text-4xl md:text-6xl text-balance leading-tight">
             Estamos construindo mais do que empresas. <span className="italic text-gold-soft">Estamos construindo presença.</span>
           </h2>
-          <p className="mt-8 text-primary-foreground/70 max-w-xl mx-auto">
+          <p className="mt-8 text-foreground/70 max-w-xl mx-auto">
             Cada cidade, uma nova possibilidade. Cada mercado, uma nova estratégia. Cada movimento, uma nova construção.
           </p>
           <Link

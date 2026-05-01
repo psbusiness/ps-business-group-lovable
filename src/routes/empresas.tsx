@@ -21,7 +21,7 @@ function EmpresasPage() {
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
 
-      <section className="bg-noir text-primary-foreground grain pt-40 pb-24 lg:pt-52 lg:pb-32">
+      <section className="bg-noir text-foreground grain pt-40 pb-24 lg:pt-52 lg:pb-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex items-center gap-3 mb-8">
             <span className="h-px w-12 bg-white/40" />
@@ -30,7 +30,7 @@ function EmpresasPage() {
           <h1 className="font-display text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.98] tracking-tight max-w-4xl text-balance">
             Um ecossistema de <span className="italic text-gold-soft">crescimento</span>.
           </h1>
-          <p className="mt-8 max-w-2xl text-lg text-primary-foreground/75 leading-relaxed">
+          <p className="mt-8 max-w-2xl text-lg text-foreground/75 leading-relaxed">
             Conectamos oportunidades, desenvolvemos negócios e fortalecemos empresas em diferentes setores e mercados — todas guiadas pelos mesmos princípios de transparência, segurança, performance e expansão estratégica.
           </p>
         </div>
