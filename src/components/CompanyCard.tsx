@@ -39,7 +39,7 @@ export function CompanyCard({ company, index }: { company: Company; index: numbe
             src={company.logo}
             alt={`Logo ${company.name}`}
             loading="lazy"
-            className="max-h-32 sm:max-h-40 w-auto max-w-full object-contain mix-blend-multiply grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105"
+            className="max-h-32 sm:max-h-40 w-auto max-w-full object-contain transition-transform duration-700 group-hover:scale-105"
           />
         ) : (
           <div
