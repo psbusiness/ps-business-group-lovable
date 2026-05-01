@@ -132,7 +132,7 @@ function SobrePage() {
         </div>
       </section>
 
-      <section className="bg-noir text-primary-foreground py-24 lg:py-28 grain text-center">
+      <section className="bg-noir text-foreground py-24 lg:py-28 grain text-center">
         <div className="max-w-3xl mx-auto px-6 lg:px-12">
           <p className="font-display text-3xl md:text-4xl leading-snug text-balance">
             Estamos construindo mais do que empresas. <span className="italic text-gold-soft">Estamos construindo presença.</span>
