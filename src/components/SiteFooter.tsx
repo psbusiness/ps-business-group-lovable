@@ -11,7 +11,7 @@ export function SiteFooter() {
               <img
                 src={logo}
                 alt="PS Business Group"
-                className="h-14 w-14 object-contain"
+                className="h-14 w-14 object-contain invert"
               />
               <div>
                 <div className="font-display text-lg">PS Business Group</div>
