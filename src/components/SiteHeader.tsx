@@ -1,7 +1,7 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/ps-logo-black.png";
+import logo from "@/assets/ps-logo-official.png";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -42,7 +42,7 @@ export function SiteHeader() {
           <img
             src={logo}
             alt="PS Business Group"
-            className="h-14 w-14 object-contain invert"
+            className="h-14 w-14 object-contain"
           />
           <div className={`leading-tight ${onDark ? "text-white" : "text-foreground"}`}>
             <div className="font-display text-base tracking-wide">PS Business</div>
