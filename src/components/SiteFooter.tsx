@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Instagram, Linkedin } from "lucide-react";
 import logo from "@/assets/ps-logo-official.png";
 
 export function SiteFooter() {
