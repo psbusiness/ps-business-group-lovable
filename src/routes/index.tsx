@@ -167,7 +167,7 @@ function HomePage() {
               <img
                 src={handshakeImg}
                 alt="Parceria estratégica PS Business Group"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover transition-all duration-700"
                 loading="lazy"
               />
             </div>
