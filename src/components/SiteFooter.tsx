@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Instagram, Linkedin } from "lucide-react";
 import logo from "@/assets/ps-logo-official.png";
 
 export function SiteFooter() {
@@ -39,6 +40,14 @@ export function SiteFooter() {
               <li>contato@psbusinessgroup.com.br</li>
               <li>São Paulo · Brasil</li>
             </ul>
+            <div className="flex items-center gap-4 mt-6">
+              <a href="https://www.instagram.com/ps_businessgroup/" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-white transition-colors">
+                <Instagram size={20} />
+              </a>
+              <a href="https://www.linkedin.com/company/ps-business-group" target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-white transition-colors">
+                <Linkedin size={20} />
+              </a>
+            </div>
           </div>
         </div>
 
