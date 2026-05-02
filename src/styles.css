@@ -122,7 +122,7 @@
   .text-balance { text-wrap: balance; }
   .text-pretty { text-wrap: pretty; }
   .font-display { font-family: var(--font-display); }
-  .bg-noir { background: var(--gradient-noir); }
+  .bg-noir { background-color: var(--gradient-noir); }
   .bg-gold-gradient { background: var(--gradient-gold); }
   .shadow-elegant { box-shadow: var(--shadow-elegant); }
   .shadow-soft { box-shadow: var(--shadow-soft); }
