@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/ps-logo-black.png";
+import logo from "@/assets/ps-logo-official.png";
 
 export function SiteFooter() {
   return (
@@ -11,7 +11,7 @@ export function SiteFooter() {
               <img
                 src={logo}
                 alt="PS Business Group"
-                className="h-14 w-14 object-contain invert"
+                className="h-14 w-14 object-contain"
               />
               <div>
                 <div className="font-display text-lg">PS Business Group</div>

@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { CompanyCard } from "@/components/CompanyCard";
 import { companies } from "@/data/companies";
-import logo from "@/assets/ps-logo-black.png";
+import logo from "@/assets/ps-logo-official.png";
 import skylineBg from "@/assets/ps-skyline.png";
 import handshakeImg from "@/assets/ps-handshake.png";
 
@@ -85,7 +85,7 @@ function HomePage() {
           <img
             src={logo}
             alt="PS Business Group"
-            className="hidden md:block absolute bottom-12 right-12 h-24 lg:h-32 w-auto object-contain opacity-90 invert"
+            className="hidden md:block absolute bottom-12 right-12 h-24 lg:h-32 w-auto object-contain opacity-90"
           />
         </div>
 
