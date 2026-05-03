@@ -19,31 +19,31 @@ export function CompanyCard({ company, index }: { company: Company; index: numbe
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay: (index % 4) * 0.08, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative flex flex-col bg-card hover:bg-secondary transition-all duration-500 overflow-hidden p-8 sm:p-10 min-h-[420px]"
+      transition={{ duration: 0.6, delay: (index % 3) * 0.1, ease: [0.22, 1, 0.36, 1] as const }}
+      className="group relative flex flex-col bg-card shadow-card glow-hover transition-all duration-500 overflow-hidden p-8 sm:p-10 min-h-[400px]"
     >
       {/* Top meta */}
-      <div className="flex items-start justify-between mb-10 gap-3">
+      <div className="flex items-start justify-between mb-8 gap-3">
         <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
           {String(index + 1).padStart(2, "0")} / {company.sector}
         </span>
-        <span className="text-foreground opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-x-2 group-hover:translate-x-0 text-lg">
+        <span className="text-gold-soft opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-x-2 group-hover:translate-x-0 text-lg">
           ↗
         </span>
       </div>
 
-      {/* Logo — preenche, sem fundo separado, em escala de cinza para harmonia editorial */}
-      <div className="flex-1 flex items-center justify-center py-6 mb-6">
+      {/* Logo */}
+      <div className="flex-1 flex items-center justify-center py-4 mb-6">
         {company.logo ? (
           <img
             src={company.logo}
             alt={`Logo ${company.name}`}
             loading="lazy"
-            className="max-h-32 sm:max-h-40 w-auto max-w-full object-contain transition-transform duration-700 group-hover:scale-105"
+            className="max-h-28 sm:max-h-36 w-auto max-w-full object-contain transition-transform duration-700 group-hover:scale-105"
           />
         ) : (
           <div
-            className="flex h-24 w-24 items-center justify-center rounded-full border border-gold/40 text-foreground/70 font-display text-2xl tracking-wider"
+            className="flex h-20 w-20 items-center justify-center rounded-full border border-gold/30 text-foreground/60 font-display text-xl tracking-wider"
             aria-label={`Iniciais ${company.name}`}
           >
             {getInitials(company.name)}
@@ -52,21 +52,22 @@ export function CompanyCard({ company, index }: { company: Company; index: numbe
       </div>
 
       {/* Bottom info */}
-      <div className="border-t border-border pt-6">
-        <h3 className="font-display text-2xl lg:text-3xl mb-3 text-balance">
+      <div className="border-t border-border/60 pt-6">
+        <h3 className="font-display text-xl lg:text-2xl mb-2 text-balance">
           {company.name}
         </h3>
-        <p className="text-sm text-muted-foreground leading-relaxed text-pretty line-clamp-3">
+        <p className="text-sm text-muted-foreground leading-relaxed text-pretty line-clamp-2">
           {company.description}
         </p>
 
-        <div className="mt-6 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-foreground">
+        <div className="mt-5 flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-gold-soft">
           <span>Visitar</span>
-          <span className="h-px w-8 bg-foreground transition-all duration-500 group-hover:w-16" />
+          <span className="h-px w-6 bg-gold-soft transition-all duration-500 group-hover:w-12" />
         </div>
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 h-px bg-foreground scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700" />
+      {/* Bottom accent line */}
+      <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-gold-soft to-transparent scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-700" />
     </motion.a>
   );
 }
