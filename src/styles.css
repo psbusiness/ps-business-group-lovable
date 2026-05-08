@@ -159,7 +159,7 @@
 
   /* Glass morphism */
   .glass {
-    background: oklch(0.10 0.004 60 / 0.6);
+    background: oklch(0 0 0 / 0.7);
     backdrop-filter: blur(20px) saturate(1.2);
     border: 1px solid oklch(1 0 0 / 0.06);
   }
