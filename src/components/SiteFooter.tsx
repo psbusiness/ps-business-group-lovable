@@ -4,7 +4,7 @@ import logo from "@/assets/ps-logo-official.png";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-noir text-foreground grain relative shimmer-line">
+    <footer className="bg-noir text-foreground relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20">
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5">

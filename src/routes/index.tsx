@@ -191,7 +191,7 @@ function HomePage() {
       </section>
 
       {/* ═══ ECOSSISTEMA ═══ */}
-      <section className="py-28 lg:py-36 bg-cream shimmer-line">
+      <section className="py-28 lg:py-36 bg-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid md:grid-cols-12 gap-12 mb-16 items-end">
             <motion.div
@@ -283,13 +283,7 @@ function HomePage() {
       </section>
 
       {/* ═══ CTA ═══ */}
-      <section className="bg-noir text-foreground py-28 lg:py-36 grain relative overflow-hidden">
-        {/* Ambient glow */}
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[800px] rounded-full opacity-10 blur-[140px]"
-          style={{ background: "radial-gradient(circle, oklch(0.58 0.008 260), transparent)" }}
-          aria-hidden="true"
-        />
+      <section className="bg-noir text-foreground py-28 lg:py-36 relative overflow-hidden">
         <div className="relative max-w-4xl mx-auto px-6 lg:px-12 text-center">
           <motion.div
             initial="hidden"
