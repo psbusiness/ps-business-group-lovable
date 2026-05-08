@@ -39,11 +39,30 @@ export const Route = createRootRoute({
       { property: "og:title", content: "PS Business Group — Grupo de empresas" },
       { property: "og:description", content: "PS Business Group — site editorial moderno do grupo empresarial." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "PS Business Group — Grupo de empresas" },
       { name: "twitter:description", content: "PS Business Group — site editorial moderno do grupo empresarial." },
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/Vp46e3IjKETKAi2tCDp1ZEMcc382/social-images/social-1776567463821-Oficial_-_PS_Business_Group_-_Horizontal.webp" },
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/Vp46e3IjKETKAi2tCDp1ZEMcc382/social-images/social-1776567463821-Oficial_-_PS_Business_Group_-_Horizontal.webp" },
+      { name: "robots", content: "index, follow" },
+      { name: "theme-color", content: "#000000" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "PS Business Group",
+          url: "https://psbusiness.lovable.app",
+          logo: "https://storage.googleapis.com/gpt-engineer-file-uploads/Vp46e3IjKETKAi2tCDp1ZEMcc382/social-images/social-1776567463821-Oficial_-_PS_Business_Group_-_Horizontal.webp",
+          description: "Grupo brasileiro reunindo empresas de excelência em logística, agronegócio, educação, esporte, capital, real estate, viagens, jurídico e mais.",
+          sameAs: [
+            "https://www.instagram.com/ps_businessgroup/",
+            "https://www.linkedin.com/company/ps-business-group",
+          ],
+        }),
+      },
     ],
     links: [
       { rel: "icon", type: "image/png", href: "/favicon.png" },

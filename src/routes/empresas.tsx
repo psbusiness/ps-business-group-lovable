@@ -9,9 +9,20 @@ export const Route = createFileRoute("/empresas")({
   head: () => ({
     meta: [
       { title: "Empresas — PS Business Group" },
-      { name: "description", content: "Conheça as dez empresas do PS Business Group em setores como logística, agro, educação, esporte, capital, imobiliário e mais." },
+      { name: "description", content: "Conheça as empresas do PS Business Group em setores como logística, agronegócio, educação, esporte, capital, imobiliário, viagens, jurídico e mais." },
       { property: "og:title", content: "Empresas — PS Business Group" },
-      { property: "og:description", content: "Portfólio completo das empresas do grupo." },
+      { property: "og:description", content: "Portfólio completo das empresas do grupo em setores estratégicos." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://psbusiness.lovable.app/empresas" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/Vp46e3IjKETKAi2tCDp1ZEMcc382/social-images/social-1776567463821-Oficial_-_PS_Business_Group_-_Horizontal.webp" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Empresas — PS Business Group" },
+      { name: "twitter:description", content: "Portfólio completo das empresas do grupo." },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/Vp46e3IjKETKAi2tCDp1ZEMcc382/social-images/social-1776567463821-Oficial_-_PS_Business_Group_-_Horizontal.webp" },
+      { name: "robots", content: "index, follow" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://psbusiness.lovable.app/empresas" },
     ],
   }),
   component: EmpresasPage,
