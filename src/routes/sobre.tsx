@@ -75,7 +75,7 @@ function SobrePage() {
       </section>
 
       {/* Excelência operacional */}
-      <section className="bg-cream py-24 lg:py-32 shimmer-line">
+      <section className="bg-cream py-24 lg:py-32">
         <div className="max-w-6xl mx-auto px-6 lg:px-12 grid md:grid-cols-12 gap-12 items-start">
           <motion.div
             initial="hidden"
@@ -177,12 +177,7 @@ function SobrePage() {
         </div>
       </section>
 
-      <section className="bg-noir text-foreground py-24 lg:py-28 grain text-center relative overflow-hidden">
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[300px] w-[500px] rounded-full opacity-10 blur-[100px]"
-          style={{ background: "radial-gradient(circle, oklch(0.58 0.008 260), transparent)" }}
-          aria-hidden="true"
-        />
+      <section className="bg-noir text-foreground py-24 lg:py-28 text-center relative overflow-hidden">
         <div className="relative max-w-3xl mx-auto px-6 lg:px-12">
           <p className="font-display text-3xl md:text-4xl leading-snug text-balance">
             Estamos construindo mais do que empresas. <span className="italic text-gold-soft">Estamos construindo presença.</span>

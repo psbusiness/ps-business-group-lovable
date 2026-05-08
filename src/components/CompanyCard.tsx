@@ -20,7 +20,7 @@ export function CompanyCard({ company, index }: { company: Company; index: numbe
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay: (index % 3) * 0.1, ease: [0.22, 1, 0.36, 1] as const }}
-      className="group relative flex flex-col bg-card shadow-card glow-hover transition-all duration-500 overflow-hidden p-8 sm:p-10 min-h-[400px]"
+      className="group relative flex flex-col bg-card shadow-card transition-all duration-500 overflow-hidden p-8 sm:p-10 min-h-[400px]"
     >
       {/* Top meta */}
       <div className="flex items-start justify-between mb-8 gap-3">

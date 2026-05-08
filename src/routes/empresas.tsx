@@ -38,12 +38,7 @@ function EmpresasPage() {
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
 
-      <section className="bg-noir text-foreground grain pt-40 pb-24 lg:pt-52 lg:pb-32 relative overflow-hidden">
-        <div
-          className="absolute -bottom-20 -right-20 h-[400px] w-[400px] rounded-full opacity-10 blur-[100px]"
-          style={{ background: "radial-gradient(circle, oklch(0.58 0.008 260), transparent)" }}
-          aria-hidden="true"
-        />
+      <section className="bg-noir text-foreground pt-40 pb-24 lg:pt-52 lg:pb-32 relative overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div initial="hidden" animate="visible" variants={fadeUp}>
             <div className="flex items-center gap-3 mb-8">
