@@ -58,12 +58,6 @@ function HomePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/25 to-black/90" aria-hidden="true" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent" aria-hidden="true" />
-        {/* Glow sutil */}
-        <div
-          className="absolute -bottom-40 -right-40 h-[600px] w-[600px] rounded-full opacity-20 blur-[120px]"
-          style={{ background: "radial-gradient(circle, oklch(0.58 0.008 260) 0%, transparent 70%)" }}
-          aria-hidden="true"
-        />
 
         <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-12 pt-36 pb-24 sm:pt-44 sm:pb-32 lg:pt-40 lg:pb-40">
           <div className="max-w-3xl">
