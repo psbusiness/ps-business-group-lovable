@@ -33,7 +33,7 @@ function Pt() {
         <br />
         <strong>Natureza:</strong> grupo empresarial brasileiro com atuação binacional Brasil — Paraguai.
         <br />
-        <strong>Sede administrativa:</strong> São Paulo — SP, Brasil.
+        <strong>Atuação:</strong> Brasil e Paraguai.
         <br />
         <strong>Contato institucional:</strong>{" "}
         <a href="mailto:contato@psbusinessgroup.com.br" className="text-gold-soft underline">

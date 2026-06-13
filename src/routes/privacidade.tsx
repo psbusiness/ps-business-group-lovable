@@ -40,8 +40,6 @@ function Pt() {
       <p>
         <strong>Razão social:</strong> PS Business Group
         <br />
-        <strong>Sede:</strong> São Paulo — SP, Brasil
-        <br />
         <strong>Atuação:</strong> Brasil e Paraguai
         <br />
         <strong>E-mail institucional:</strong>{" "}
