@@ -254,6 +254,12 @@ const es: Dict = {
   "contact.f.msg": "Mensaje",
   "contact.f.send": "Enviar mensaje",
   "contact.f.sent": "Mensaje enviado ✓",
+  "contact.err.generic": "Campo inválido.",
+  "contact.err.nome": "Ingresa tu nombre (mínimo 2 caracteres).",
+  "contact.err.empresa": "Nombre de empresa demasiado largo.",
+  "contact.err.email": "Ingresa un e-mail válido.",
+  "contact.err.assunto": "Ingresa el asunto (mínimo 3 caracteres).",
+  "contact.err.msg": "El mensaje debe tener entre 10 y 2000 caracteres.",
   "footer.tagline":
     "Conexiones que impulsan el futuro. Inteligencia empresarial, gestión eficiente y visión de largo plazo en distintos sectores y mercados.",
   "footer.nav": "Navegación",
