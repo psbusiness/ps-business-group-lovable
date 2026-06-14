@@ -51,9 +51,10 @@ function ContatoPage() {
         </div>
       </section>
 
-      <section className="pb-32">
+      <section className="pb-32" aria-labelledby="contato-info-heading">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="max-w-5xl mx-auto px-6 lg:px-12 grid md:grid-cols-5 gap-16">
           <div className="md:col-span-2 space-y-8">
+            <h2 id="contato-info-heading" className="sr-only">{t("contact.email")}</h2>
             <div>
               <div className="text-[10px] uppercase tracking-[0.3em] text-gold-soft/50 mb-2">{t("contact.email")}</div>
               <a href="mailto:contato@psbusinessgroup.com.br" className="hover:text-gold-soft transition-colors duration-300">

@@ -106,7 +106,7 @@ function HomePage() {
             ].map((p, i) => (
               <motion.div key={p.n} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} custom={i} variants={fadeUp} className="bg-background p-8 lg:p-10 group hover:bg-card transition-colors duration-500">
                 <div className="font-display text-gold/40 text-sm tracking-[0.3em] mb-6 group-hover:text-gold/70 transition-colors duration-500">{p.n}</div>
-                <h3 className="font-display text-2xl mb-3">{p.t}</h3>
+                <h2 className="font-display text-2xl mb-3">{p.t}</h2>
                 <p className="text-sm text-muted-foreground leading-relaxed">{p.d}</p>
               </motion.div>
             ))}
