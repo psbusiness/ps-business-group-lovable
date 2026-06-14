@@ -50,8 +50,9 @@ function EmpresasPage() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-28 bg-cream">
+      <section className="py-20 lg:py-28 bg-cream" aria-labelledby="empresas-list-heading">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <h2 id="empresas-list-heading" className="sr-only">{t("companies.titleA")} {t("companies.titleB")}</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
             {companies.map((c, i) => (
               <CompanyCard key={c.slug} company={c} index={i} />
