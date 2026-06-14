@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { z } from "zod";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { useT } from "@/i18n";
@@ -28,9 +29,60 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const } },
 };
 
+const contactSchema = z.object({
+  nome: z.string().trim().min(2, "min").max(100, "max"),
+  empresa: z.string().trim().max(120, "max").optional().or(z.literal("")),
+  email: z.string().trim().email("email").max(255, "max"),
+  assunto: z.string().trim().min(3, "min").max(150, "max"),
+  msg: z.string().trim().min(10, "min").max(2000, "max"),
+  // Honeypot — must remain empty. Bots typically fill all fields.
+  website: z.string().max(0, "spam").optional(),
+});
+
+type FieldErrors = Partial<Record<keyof z.infer<typeof contactSchema>, string>>;
+
 function ContatoPage() {
   const { t } = useT();
   const [sent, setSent] = useState(false);
+  const [errors, setErrors] = useState<FieldErrors>({});
+  const [submitting, setSubmitting] = useState(false);
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (submitting || sent) return;
+    setSubmitting(true);
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form).entries());
+    const result = contactSchema.safeParse(data);
+    if (!result.success) {
+      const next: FieldErrors = {};
+      for (const issue of result.error.issues) {
+        const key = issue.path[0] as keyof FieldErrors;
+        if (!next[key]) next[key] = issue.message;
+      }
+      setErrors(next);
+      setSubmitting(false);
+      return;
+    }
+    // Honeypot tripped — silently pretend success.
+    if (result.data.website) {
+      setSent(true);
+      setSubmitting(false);
+      return;
+    }
+    setErrors({});
+    // Track conversion in GA4 (if consent granted)
+    try {
+      window.gtag?.("event", "generate_lead", {
+        event_category: "contact",
+        event_label: "contact_form",
+      });
+    } catch {
+      // ignore
+    }
+    setSent(true);
+    setSubmitting(false);
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -71,20 +123,44 @@ function ContatoPage() {
             </div>
           </div>
 
-          <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} className="md:col-span-3 space-y-6">
-            <div className="grid sm:grid-cols-2 gap-6">
-              <Field label={t("contact.f.name")} id="nome" required />
-              <Field label={t("contact.f.company")} id="empresa" />
+          <form onSubmit={onSubmit} noValidate className="md:col-span-3 space-y-6">
+            {/* Honeypot — visually hidden, must stay empty */}
+            <div className="hidden" aria-hidden="true">
+              <label htmlFor="website">Website</label>
+              <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
             </div>
-            <Field label={t("contact.f.email")} id="email" type="email" required />
-            <Field label={t("contact.f.subject")} id="assunto" required />
+
+            <div className="grid sm:grid-cols-2 gap-6">
+              <Field label={t("contact.f.name")} id="nome" required error={errors.nome} />
+              <Field label={t("contact.f.company")} id="empresa" error={errors.empresa} />
+            </div>
+            <Field label={t("contact.f.email")} id="email" type="email" required error={errors.email} />
+            <Field label={t("contact.f.subject")} id="assunto" required error={errors.assunto} />
             <div>
               <label htmlFor="msg" className="block text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-3">
-                {t("contact.f.msg")}
+                {t("contact.f.msg")} <span className="text-gold-soft">*</span>
               </label>
-              <textarea id="msg" rows={5} required className="w-full bg-transparent border-b border-border focus:border-gold-soft outline-none py-3 text-base resize-none transition-colors duration-300" />
+              <textarea
+                id="msg"
+                name="msg"
+                rows={5}
+                required
+                maxLength={2000}
+                aria-invalid={!!errors.msg}
+                aria-describedby={errors.msg ? "msg-error" : undefined}
+                className="w-full bg-transparent border-b border-border focus:border-gold-soft outline-none py-3 text-base resize-none transition-colors duration-300"
+              />
+              {errors.msg && (
+                <p id="msg-error" className="mt-2 text-xs text-destructive">
+                  {t("contact.err.msg")}
+                </p>
+              )}
             </div>
-            <button type="submit" disabled={sent} className="inline-flex items-center gap-3 bg-gold-gradient text-primary-foreground px-8 py-4 text-sm uppercase tracking-[0.2em] hover:shadow-gold transition-all duration-500 disabled:opacity-50">
+            <button
+              type="submit"
+              disabled={sent || submitting}
+              className="inline-flex items-center gap-3 bg-gold-gradient text-primary-foreground px-8 py-4 text-sm uppercase tracking-[0.2em] hover:shadow-gold transition-all duration-500 disabled:opacity-50"
+            >
               {sent ? t("contact.f.sent") : `${t("contact.f.send")} →`}
             </button>
           </form>
@@ -96,13 +172,42 @@ function ContatoPage() {
   );
 }
 
-function Field({ label, id, type = "text", required }: { label: string; id: string; type?: string; required?: boolean }) {
+function Field({
+  label,
+  id,
+  type = "text",
+  required,
+  error,
+}: {
+  label: string;
+  id: string;
+  type?: string;
+  required?: boolean;
+  error?: string;
+}) {
+  const { t } = useT();
+  const errKey = error ? `contact.err.${id}` : "";
   return (
     <div>
       <label htmlFor={id} className="block text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-3">
         {label} {required && <span className="text-gold-soft">*</span>}
       </label>
-      <input id={id} type={type} required={required} className="w-full bg-transparent border-b border-border focus:border-gold-soft outline-none py-3 text-base transition-colors duration-300" />
+      <input
+        id={id}
+        name={id}
+        type={type}
+        required={required}
+        maxLength={type === "email" ? 255 : 150}
+        autoComplete={type === "email" ? "email" : "off"}
+        aria-invalid={!!error}
+        aria-describedby={error ? `${id}-error` : undefined}
+        className="w-full bg-transparent border-b border-border focus:border-gold-soft outline-none py-3 text-base transition-colors duration-300"
+      />
+      {error && (
+        <p id={`${id}-error`} className="mt-2 text-xs text-destructive">
+          {t(errKey) || t("contact.err.generic")}
+        </p>
+      )}
     </div>
   );
 }
