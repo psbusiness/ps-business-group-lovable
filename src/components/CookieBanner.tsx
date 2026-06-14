@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useT } from "@/i18n";
+import { grantAnalyticsConsent, denyAnalyticsConsent } from "@/components/Analytics";
 
 const KEY = "ps-cookies-consent";
 
@@ -23,6 +24,8 @@ export function CookieBanner() {
     } catch {
       // ignore
     }
+    if (value === "accepted") grantAnalyticsConsent();
+    else denyAnalyticsConsent();
     setVisible(false);
   };
 

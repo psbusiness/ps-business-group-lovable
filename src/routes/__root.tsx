@@ -103,6 +103,8 @@ function RootComponent() {
     <LanguageProvider>
       <Outlet />
       <CookieBanner />
+      <Analytics />
     </LanguageProvider>
   );
 }
+
