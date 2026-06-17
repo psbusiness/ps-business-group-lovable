@@ -56,16 +56,33 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-10 text-sm">
-          <Link to="/" className={`${linkBase} transition-colors duration-300`} activeProps={{ className: linkActive }} activeOptions={{ exact: true }}>
+          <Link
+            to="/"
+            className={`${linkBase} transition-colors duration-300`}
+            activeProps={{ className: linkActive }}
+            activeOptions={{ exact: true }}
+          >
             {t("nav.home")}
           </Link>
-          <Link to="/empresas" className={`${linkBase} transition-colors duration-300`} activeProps={{ className: linkActive }}>
+          <Link
+            to="/empresas"
+            className={`${linkBase} transition-colors duration-300`}
+            activeProps={{ className: linkActive }}
+          >
             {t("nav.companies")}
           </Link>
-          <Link to="/sobre" className={`${linkBase} transition-colors duration-300`} activeProps={{ className: linkActive }}>
+          <Link
+            to="/sobre"
+            className={`${linkBase} transition-colors duration-300`}
+            activeProps={{ className: linkActive }}
+          >
             {t("nav.about")}
           </Link>
-          <Link to="/contato" className={`${linkBase} transition-colors duration-300`} activeProps={{ className: linkActive }}>
+          <Link
+            to="/contato"
+            className={`${linkBase} transition-colors duration-300`}
+            activeProps={{ className: linkActive }}
+          >
             {t("nav.contact")}
           </Link>
         </nav>
@@ -99,16 +116,33 @@ export function SiteHeader() {
       {open && (
         <div className="md:hidden glass border-t border-border/40">
           <nav className="px-6 py-6 flex flex-col gap-5 text-base">
-            <Link to="/" className="text-foreground" activeProps={{ className: "text-foreground font-medium" }} activeOptions={{ exact: true }}>
+            <Link
+              to="/"
+              className="text-foreground"
+              activeProps={{ className: "text-foreground font-medium" }}
+              activeOptions={{ exact: true }}
+            >
               {t("nav.home")}
             </Link>
-            <Link to="/empresas" className="text-foreground" activeProps={{ className: "text-foreground font-medium" }}>
+            <Link
+              to="/empresas"
+              className="text-foreground"
+              activeProps={{ className: "text-foreground font-medium" }}
+            >
               {t("nav.companies")}
             </Link>
-            <Link to="/sobre" className="text-foreground" activeProps={{ className: "text-foreground font-medium" }}>
+            <Link
+              to="/sobre"
+              className="text-foreground"
+              activeProps={{ className: "text-foreground font-medium" }}
+            >
               {t("nav.about")}
             </Link>
-            <Link to="/contato" className="text-foreground" activeProps={{ className: "text-foreground font-medium" }}>
+            <Link
+              to="/contato"
+              className="text-foreground"
+              activeProps={{ className: "text-foreground font-medium" }}
+            >
               {t("nav.contact")}
             </Link>
             <div className="pt-2 flex items-center justify-between">
