@@ -63,7 +63,10 @@ export function Analytics() {
   useEffect(() => {
     if (typeof window === "undefined" || !window.gtag) return;
     window.gtag("event", "page_view", {
-      page_path: pathname + (search ? `?${new URLSearchParams(search as Record<string, string>).toString()}` : "") + (hash || ""),
+      page_path:
+        pathname +
+        (search ? `?${new URLSearchParams(search as Record<string, string>).toString()}` : "") +
+        (hash || ""),
       page_location: window.location.href,
       page_title: document.title,
     });

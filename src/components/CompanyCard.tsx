@@ -53,9 +53,7 @@ export function CompanyCard({ company, index }: { company: Company; index: numbe
 
       {/* Bottom info */}
       <div className="border-t border-border/60 pt-6">
-        <h3 className="font-display text-xl lg:text-2xl mb-2 text-balance">
-          {company.name}
-        </h3>
+        <h3 className="font-display text-xl lg:text-2xl mb-2 text-balance">{company.name}</h3>
         <p className="text-sm text-muted-foreground leading-relaxed text-pretty line-clamp-2">
           {company.description}
         </p>
