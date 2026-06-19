@@ -52,16 +52,27 @@ const contactSchema = z.object({
 
 type FieldErrors = Partial<Record<keyof z.infer<typeof contactSchema>, string>>;
 
+// Google Forms endpoint (no-cors POST — accepts cross-origin form submissions)
+const GFORM_ACTION =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfZJ0NaUMT8YyRa46UmQChp3iIYDT8jnaa9PPEfiQoVD7z2UQ/formResponse";
+const GFORM_ENTRY = {
+  nome: "entry.1324216922",
+  email: "entry.1947794513",
+  mensagem: "entry.1159789124",
+} as const;
+
 function ContatoPage() {
   const { t } = useT();
   const [sent, setSent] = useState(false);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (submitting || sent) return;
     setSubmitting(true);
+    setSubmitError(null);
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
     const result = contactSchema.safeParse(data);
@@ -82,18 +93,50 @@ function ContatoPage() {
       return;
     }
     setErrors({});
-    // Track conversion in GA4 (if consent granted)
+
+    // Build payload for Google Forms. The form only has 3 fields,
+    // so we fold empresa + assunto into the message body.
+    const { nome, empresa, email, assunto, msg } = result.data;
+    const composedMessage = [
+      assunto ? `Assunto: ${assunto}` : null,
+      empresa ? `Empresa: ${empresa}` : null,
+      "",
+      msg,
+    ]
+      .filter((line) => line !== null)
+      .join("\n");
+
+    const body = new URLSearchParams();
+    body.append(GFORM_ENTRY.nome, nome);
+    body.append(GFORM_ENTRY.email, email);
+    body.append(GFORM_ENTRY.mensagem, composedMessage);
+
     try {
-      window.gtag?.("event", "generate_lead", {
-        event_category: "contact",
-        event_label: "contact_form",
+      // Google Forms does not return CORS headers; use no-cors fire-and-forget.
+      // A successful POST resolves; only true network failures reject.
+      await fetch(GFORM_ACTION, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
       });
+      // Track conversion in GA4 (if consent granted)
+      try {
+        window.gtag?.("event", "generate_lead", {
+          event_category: "contact",
+          event_label: "contact_form",
+        });
+      } catch {
+        // ignore
+      }
+      setSent(true);
     } catch {
-      // ignore
+      setSubmitError(t("contact.err.send"));
+    } finally {
+      setSubmitting(false);
     }
-    setSent(true);
-    setSubmitting(false);
   };
+
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -201,10 +244,22 @@ function ContatoPage() {
             <button
               type="submit"
               disabled={sent || submitting}
+              aria-busy={submitting}
               className="inline-flex items-center gap-3 bg-gold-gradient text-primary-foreground px-8 py-4 text-sm uppercase tracking-[0.2em] hover:shadow-gold transition-all duration-500 disabled:opacity-50"
             >
-              {sent ? t("contact.f.sent") : `${t("contact.f.send")} →`}
+              {sent
+                ? t("contact.f.sent")
+                : submitting
+                  ? t("contact.f.sending")
+                  : `${t("contact.f.send")} →`}
             </button>
+            <div aria-live="polite" className="min-h-[1.25rem]">
+              {submitError && (
+                <p role="alert" className="text-xs text-destructive">
+                  {submitError}
+                </p>
+              )}
+            </div>
           </form>
         </motion.div>
       </section>

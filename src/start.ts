@@ -21,7 +21,7 @@ const securityHeaders = createMiddleware().server(async ({ next }) => {
         "font-src 'self' https://fonts.gstatic.com data:",
         "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
         "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",
-        "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com",
+        "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://docs.google.com",
         "upgrade-insecure-requests",
       ].join("; "),
     });
