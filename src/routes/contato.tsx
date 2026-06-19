@@ -69,11 +69,6 @@ function ContatoPage() {
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    (window as unknown as { __contatoMarks?: string[] }).__contatoMarks = [
-      ...((window as unknown as { __contatoMarks?: string[] }).__contatoMarks ?? []),
-      `onSubmit@${Date.now()}`,
-    ];
-    console.log("[contato] onSubmit fired");
     e.preventDefault();
     if (submitting || sent) return;
     setSubmitting(true);
