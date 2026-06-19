@@ -244,10 +244,22 @@ function ContatoPage() {
             <button
               type="submit"
               disabled={sent || submitting}
+              aria-busy={submitting}
               className="inline-flex items-center gap-3 bg-gold-gradient text-primary-foreground px-8 py-4 text-sm uppercase tracking-[0.2em] hover:shadow-gold transition-all duration-500 disabled:opacity-50"
             >
-              {sent ? t("contact.f.sent") : `${t("contact.f.send")} →`}
+              {sent
+                ? t("contact.f.sent")
+                : submitting
+                  ? t("contact.f.sending")
+                  : `${t("contact.f.send")} →`}
             </button>
+            <div aria-live="polite" className="min-h-[1.25rem]">
+              {submitError && (
+                <p role="alert" className="text-xs text-destructive">
+                  {submitError}
+                </p>
+              )}
+            </div>
           </form>
         </motion.div>
       </section>
