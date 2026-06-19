@@ -112,7 +112,6 @@ function ContatoPage() {
     body.append(GFORM_ENTRY.mensagem, composedMessage);
 
     try {
-      console.log("[contato] POSTing to Google Forms", { len: body.toString().length });
       // Google Forms does not return CORS headers; use no-cors fire-and-forget.
       // A successful POST resolves; only true network failures reject.
       await fetch(GFORM_ACTION, {
@@ -121,7 +120,6 @@ function ContatoPage() {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: body.toString(),
       });
-      console.log("[contato] fetch resolved");
       // Track conversion in GA4 (if consent granted)
       try {
         window.gtag?.("event", "generate_lead", {
