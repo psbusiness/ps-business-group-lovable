@@ -69,6 +69,7 @@ function ContatoPage() {
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    console.log("[contato] onSubmit fired");
     e.preventDefault();
     if (submitting || sent) return;
     setSubmitting(true);
