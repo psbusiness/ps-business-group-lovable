@@ -2,17 +2,17 @@
 
 > Grupo empresarial brasileiro com atuação binacional Brasil — Paraguai, reunindo empresas de excelência em logística, agronegócio, educação, esporte, capital, real estate, viagens e jurídico.
 
-O PS Business Group conecta empresas em setores estratégicos, com foco em parcerias de longo prazo, governança e crescimento sustentável.
+Site institucional em página única (one-page). Todas as seções principais estão na home.
 
-## Pages
+## Seções
 
-- [Início](/): Visão geral do grupo, princípios e ecossistema de empresas.
-- [Sobre](/sobre): História, propósito e modelo de gestão do PS Business Group.
-- [Empresas](/empresas): Portfólio completo das empresas do grupo por setor de atuação.
-- [Contato](/contato): Canais oficiais para parcerias, imprensa e oportunidades de negócio.
+- [Início](/): Hero e apresentação do grupo.
+- [Sobre](/#sobre): História, propósito e excelência operacional.
+- [Empresas](/#empresas): Portfólio completo das empresas do grupo.
+- [Contato](/#contato): Formulário e canais oficiais de contato.
 
-## Optional
+## Legal
 
-- [Política de Privacidade](/privacidade): Tratamento de dados pessoais conforme LGPD e Ley 6.534/20.
-- [Termos de Uso](/termos): Regras de uso do site e propriedade intelectual.
-- [Aviso Legal](/aviso-legal): Identificação institucional e conformidade regulatória.
+- [Política de Privacidade](/privacidade)
+- [Termos de Uso](/termos)
+- [Aviso Legal](/aviso-legal)
