@@ -45,28 +45,28 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/empresas"
+                <a
+                  href="/#empresas"
                   className="text-foreground/60 hover:text-foreground transition-colors duration-300"
                 >
                   {t("nav.companies")}
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  to="/sobre"
+                <a
+                  href="/#sobre"
                   className="text-foreground/60 hover:text-foreground transition-colors duration-300"
                 >
                   {t("nav.about")}
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  to="/contato"
+                <a
+                  href="/#contato"
                   className="text-foreground/60 hover:text-foreground transition-colors duration-300"
                 >
                   {t("nav.contact")}
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

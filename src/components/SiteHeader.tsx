@@ -11,7 +11,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
 
-  const heroIsDark = pathname === "/" || pathname === "/empresas" || pathname === "/sobre";
+  const heroIsDark = pathname === "/";
   const onDark = heroIsDark && !scrolled;
 
   useEffect(() => {
@@ -64,33 +64,21 @@ export function SiteHeader() {
           >
             {t("nav.home")}
           </Link>
-          <Link
-            to="/empresas"
-            className={`${linkBase} transition-colors duration-300`}
-            activeProps={{ className: linkActive }}
-          >
+          <a href="/#empresas" className={`${linkBase} transition-colors duration-300`}>
             {t("nav.companies")}
-          </Link>
-          <Link
-            to="/sobre"
-            className={`${linkBase} transition-colors duration-300`}
-            activeProps={{ className: linkActive }}
-          >
+          </a>
+          <a href="/#sobre" className={`${linkBase} transition-colors duration-300`}>
             {t("nav.about")}
-          </Link>
-          <Link
-            to="/contato"
-            className={`${linkBase} transition-colors duration-300`}
-            activeProps={{ className: linkActive }}
-          >
+          </a>
+          <a href="/#contato" className={`${linkBase} transition-colors duration-300`}>
             {t("nav.contact")}
-          </Link>
+          </a>
         </nav>
 
         <div className="hidden md:flex items-center gap-6">
           <LanguageSwitcher onDark={onDark} />
-          <Link
-            to="/contato"
+          <a
+            href="/#contato"
             className={`inline-flex items-center gap-2 text-sm px-5 py-2.5 transition-all duration-300 border ${
               onDark
                 ? "border-gold-soft/40 text-gold-soft hover:bg-gold-soft/10 hover:border-gold-soft/60"
@@ -99,7 +87,7 @@ export function SiteHeader() {
           >
             {t("nav.cta")}
             <span aria-hidden>→</span>
-          </Link>
+          </a>
         </div>
 
         <button
@@ -124,35 +112,24 @@ export function SiteHeader() {
             >
               {t("nav.home")}
             </Link>
-            <Link
-              to="/empresas"
-              className="text-foreground"
-              activeProps={{ className: "text-foreground font-medium" }}
-            >
+            <a href="/#empresas" className="text-foreground" onClick={() => setOpen(false)}>
               {t("nav.companies")}
-            </Link>
-            <Link
-              to="/sobre"
-              className="text-foreground"
-              activeProps={{ className: "text-foreground font-medium" }}
-            >
+            </a>
+            <a href="/#sobre" className="text-foreground" onClick={() => setOpen(false)}>
               {t("nav.about")}
-            </Link>
-            <Link
-              to="/contato"
-              className="text-foreground"
-              activeProps={{ className: "text-foreground font-medium" }}
-            >
+            </a>
+            <a href="/#contato" className="text-foreground" onClick={() => setOpen(false)}>
               {t("nav.contact")}
-            </Link>
+            </a>
             <div className="pt-2 flex items-center justify-between">
               <LanguageSwitcher />
-              <Link
-                to="/contato"
+              <a
+                href="/#contato"
+                onClick={() => setOpen(false)}
                 className="inline-flex items-center justify-center gap-2 bg-gold-gradient text-primary-foreground px-5 py-3 text-sm uppercase tracking-[0.2em]"
               >
                 {t("nav.cta")} →
-              </Link>
+              </a>
             </div>
           </nav>
         </div>
