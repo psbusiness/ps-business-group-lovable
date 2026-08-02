@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Linkedin, Lock } from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react";
 import logo from "@/assets/ps-logo-official.png";
 import { useT } from "@/i18n";
 
