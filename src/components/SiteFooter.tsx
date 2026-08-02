@@ -25,10 +25,6 @@ export function SiteFooter() {
               {t("footer.tagline")}
             </p>
 
-            <div className="mt-6 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-foreground/40">
-              <Lock size={12} className="text-gold-soft/70" />
-              <span>Conexão segura · HTTPS / SSL</span>
-            </div>
           </div>
 
           <div className="md:col-span-2">
