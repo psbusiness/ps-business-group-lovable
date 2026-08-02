@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Linkedin, Lock } from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react";
 import logo from "@/assets/ps-logo-official.png";
 import { useT } from "@/i18n";
 
@@ -25,10 +25,6 @@ export function SiteFooter() {
               {t("footer.tagline")}
             </p>
 
-            <div className="mt-6 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-foreground/40">
-              <Lock size={12} className="text-gold-soft/70" />
-              <span>Conexão segura · HTTPS / SSL</span>
-            </div>
           </div>
 
           <div className="md:col-span-2">
@@ -138,7 +134,6 @@ export function SiteFooter() {
           <div>
             © {year} PS Business Group. {t("footer.rights")}
           </div>
-          <div className="font-display italic text-gold-soft/40">{t("footer.building")}</div>
         </div>
       </div>
     </footer>
