@@ -118,7 +118,8 @@ const pt: Dict = {
   "contact.f.send": "Enviar mensagem",
   "contact.f.sending": "Enviando…",
   "contact.f.sent": "Mensagem enviada ✓",
-  "contact.err.send": "Não foi possível enviar agora. Tente novamente ou escreva para contato@psbusinessgroup.com.br.",
+  "contact.err.send":
+    "Não foi possível enviar agora. Tente novamente ou escreva para contato@psbusinessgroup.com.br.",
   "contact.err.generic": "Campo inválido.",
   "contact.err.nome": "Informe seu nome (mínimo 2 caracteres).",
   "contact.err.empresa": "Nome da empresa muito longo.",
@@ -257,7 +258,8 @@ const es: Dict = {
   "contact.f.send": "Enviar mensaje",
   "contact.f.sending": "Enviando…",
   "contact.f.sent": "Mensaje enviado ✓",
-  "contact.err.send": "No se pudo enviar ahora. Intenta de nuevo o escribe a contato@psbusinessgroup.com.br.",
+  "contact.err.send":
+    "No se pudo enviar ahora. Intenta de nuevo o escribe a contato@psbusinessgroup.com.br.",
   "contact.err.generic": "Campo inválido.",
   "contact.err.nome": "Ingresa tu nombre (mínimo 2 caracteres).",
   "contact.err.empresa": "Nombre de empresa demasiado largo.",

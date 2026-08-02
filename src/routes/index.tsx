@@ -94,7 +94,8 @@ function HomePage() {
       const h = window.location.hash.replace("#", "");
       if (!h) return;
       const el = document.getElementById(h);
-      if (el) requestAnimationFrame(() => el.scrollIntoView({ behavior: "smooth", block: "start" }));
+      if (el)
+        requestAnimationFrame(() => el.scrollIntoView({ behavior: "smooth", block: "start" }));
     };
     scrollToHash();
     window.addEventListener("hashchange", scrollToHash);
