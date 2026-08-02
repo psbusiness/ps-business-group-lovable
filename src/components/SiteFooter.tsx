@@ -134,7 +134,6 @@ export function SiteFooter() {
           <div>
             © {year} PS Business Group. {t("footer.rights")}
           </div>
-          <div className="font-display italic text-gold-soft/40">{t("footer.building")}</div>
         </div>
       </div>
     </footer>
