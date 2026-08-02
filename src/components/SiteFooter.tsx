@@ -24,7 +24,6 @@ export function SiteFooter() {
             <p className="text-sm text-foreground/50 max-w-sm leading-relaxed">
               {t("footer.tagline")}
             </p>
-
           </div>
 
           <div className="md:col-span-2">
