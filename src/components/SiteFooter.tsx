@@ -97,41 +97,31 @@ export function SiteFooter() {
               </li>
             </ul>
           </div>
-
-          <div className="md:col-span-3">
-            <div className="text-[10px] uppercase tracking-[0.3em] text-gold-soft/50 mb-5">
-              {t("footer.contact")}
-            </div>
-            <ul className="space-y-3 text-sm text-foreground/50">
-              <li>contato@psbusinessgroup.com.br</li>
-              <li>{t("footer.location")}</li>
-            </ul>
-            <div className="flex items-center gap-4 mt-6">
-              <a
-                href="https://www.instagram.com/ps_businessgroup/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="text-foreground/40 hover:text-gold-soft transition-colors duration-300"
-              >
-                <Instagram size={18} />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/ps-business-group"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="text-foreground/40 hover:text-gold-soft transition-colors duration-300"
-              >
-                <Linkedin size={18} />
-              </a>
-            </div>
-          </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-white/6 flex flex-col md:flex-row justify-between gap-4 text-xs text-foreground/30">
+        <div className="mt-16 pt-8 border-t border-white/6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-foreground/30">
           <div>
             © {year} PS Business Group. {t("footer.rights")}
+          </div>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://www.instagram.com/ps_businessgroup/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="text-foreground/40 hover:text-gold-soft transition-colors duration-300"
+            >
+              <Instagram size={18} />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/ps-business-group"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-foreground/40 hover:text-gold-soft transition-colors duration-300"
+            >
+              <Linkedin size={18} />
+            </a>
           </div>
         </div>
       </div>
