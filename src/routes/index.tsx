@@ -526,34 +526,8 @@ function ContactSection() {
           </p>
         </motion.div>
 
-        <div className="mt-16 grid md:grid-cols-5 gap-12 md:gap-16">
-          <div className="md:col-span-2 space-y-8">
-            <div>
-              <div className="text-[10px] uppercase tracking-[0.3em] text-gold-soft/50 mb-2">
-                {t("contact.email")}
-              </div>
-              <a
-                href="mailto:contato@psbusinessgroup.com.br"
-                className="hover:text-gold-soft transition-colors duration-300"
-              >
-                contato@psbusinessgroup.com.br
-              </a>
-            </div>
-            <div>
-              <div className="text-[10px] uppercase tracking-[0.3em] text-gold-soft/50 mb-2">
-                {t("contact.region")}
-              </div>
-              <p>{t("contact.regionV")}</p>
-            </div>
-            <div>
-              <div className="text-[10px] uppercase tracking-[0.3em] text-gold-soft/50 mb-2">
-                {t("contact.group")}
-              </div>
-              <p className="text-foreground/60">{t("contact.groupV")}</p>
-            </div>
-          </div>
-
-          <form onSubmit={onSubmit} noValidate className="md:col-span-3 space-y-6">
+        <div className="mt-16 max-w-2xl">
+          <form onSubmit={onSubmit} noValidate className="space-y-6">
             <div className="hidden" aria-hidden="true">
               <label htmlFor="website">Website</label>
               <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
