@@ -7,7 +7,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { CompanyCard } from "@/components/CompanyCard";
 import { companies } from "@/data/companies";
 import { useT } from "@/i18n";
-import logo from "@/assets/ps-logo-official.png";
+
 import skylineBg from "@/assets/ps-skyline.png";
 import handshakeImg from "@/assets/ps-handshake.png";
 import officeImg from "@/assets/ps-office.png";
