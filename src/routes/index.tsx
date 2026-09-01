@@ -7,7 +7,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { CompanyCard } from "@/components/CompanyCard";
 import { companies } from "@/data/companies";
 import { useT } from "@/i18n";
-import logo from "@/assets/ps-logo-official.png";
+
 import skylineBg from "@/assets/ps-skyline.png";
 import handshakeImg from "@/assets/ps-handshake.png";
 import officeImg from "@/assets/ps-office.png";
@@ -187,14 +187,6 @@ function HomePage() {
             </motion.div>
           </div>
 
-          <motion.img
-            src={logo}
-            alt="PS Business Group"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 0.8, scale: 1 }}
-            transition={{ duration: 1.2, delay: 0.8, ease: "easeOut" }}
-            className="hidden md:block absolute bottom-12 right-12 h-24 lg:h-32 w-auto object-contain"
-          />
         </div>
       </section>
 
