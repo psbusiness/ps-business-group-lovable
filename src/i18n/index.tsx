@@ -148,6 +148,8 @@ const pt: Dict = {
   // Legal common
   "legal.updated": "Última atualização",
   "legal.back": "Voltar ao início",
+  "img.office": "Ambiente corporativo PS Business Group",
+  "img.handshake": "Parceria estratégica PS Business Group",
 };
 
 const es: Dict = {
@@ -285,6 +287,8 @@ const es: Dict = {
   "cookies.more": "Más información",
   "legal.updated": "Última actualización",
   "legal.back": "Volver al inicio",
+  "img.office": "Entorno corporativo PS Business Group",
+  "img.handshake": "Alianza estratégica PS Business Group",
 };
 
 const dicts: Record<Lang, Dict> = { pt, es };
