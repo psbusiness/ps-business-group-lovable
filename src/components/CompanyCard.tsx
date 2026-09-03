@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import type { Company } from "@/data/companies";
+import { useT } from "@/i18n";
 
 function getInitials(name: string): string {
   const cleaned = name
@@ -11,6 +12,9 @@ function getInitials(name: string): string {
 }
 
 export function CompanyCard({ company, index }: { company: Company; index: number }) {
+  const { lang } = useT();
+  const sector = lang === "es" ? company.sectorEs : company.sector;
+  const description = lang === "es" ? company.descriptionEs : company.description;
   return (
     <motion.a
       href={company.url}
@@ -25,7 +29,7 @@ export function CompanyCard({ company, index }: { company: Company; index: numbe
       {/* Top meta */}
       <div className="flex items-start justify-between mb-8 gap-3">
         <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-          {String(index + 1).padStart(2, "0")} / {company.sector}
+          {String(index + 1).padStart(2, "0")} / {sector}
         </span>
         <span className="text-gold-soft opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-x-2 group-hover:translate-x-0 text-lg">
           ↗
@@ -44,7 +48,7 @@ export function CompanyCard({ company, index }: { company: Company; index: numbe
         ) : (
           <div
             className="flex h-20 w-20 items-center justify-center rounded-full border border-gold/30 text-foreground/60 font-display text-xl tracking-wider"
-            aria-label={`Iniciais ${company.name}`}
+            aria-label={lang === "es" ? `Iniciales ${company.name}` : `Iniciais ${company.name}`}
           >
             {getInitials(company.name)}
           </div>
@@ -55,11 +59,11 @@ export function CompanyCard({ company, index }: { company: Company; index: numbe
       <div className="border-t border-border/60 pt-6">
         <h3 className="font-display text-xl lg:text-2xl mb-2 text-balance">{company.name}</h3>
         <p className="text-sm text-muted-foreground leading-relaxed text-pretty line-clamp-2">
-          {company.description}
+          {description}
         </p>
 
         <div className="mt-5 flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-gold-soft">
-          <span>Visitar</span>
+          <span>{lang === "es" ? "Visitar sitio" : "Visitar"}</span>
           <span className="h-px w-6 bg-gold-soft transition-all duration-500 group-hover:w-12" />
         </div>
       </div>
