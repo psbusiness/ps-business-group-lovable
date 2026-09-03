@@ -364,7 +364,7 @@ function HomePage() {
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
               {companies.slice(5, 10).map((c, i) => (
-                <CompanyCard key={c.slug} company={c} index={i} />
+                <CompanyCard key={c.slug} company={c} index={i + 5} />
               ))}
             </div>
           </div>
