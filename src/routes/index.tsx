@@ -283,7 +283,7 @@ function HomePage() {
               <div className="overflow-hidden aspect-[4/5] shadow-elegant">
                 <img
                   src={officeImg}
-                  alt="Ambiente corporativo PS Business Group"
+                  alt={t("img.office")}
                   className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
                   loading="lazy"
                 />
@@ -384,7 +384,7 @@ function HomePage() {
             <div className="overflow-hidden aspect-[4/5] max-h-[520px] shadow-elegant">
               <img
                 src={handshakeImg}
-                alt="Parceria estratégica PS Business Group"
+                alt={t("img.handshake")}
                 className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
                 loading="lazy"
               />
