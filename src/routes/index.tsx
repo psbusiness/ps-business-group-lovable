@@ -356,10 +356,17 @@ function HomePage() {
             </p>
           </motion.div>
 
-          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
-            {companies.map((c, i) => (
-              <CompanyCard key={c.slug} company={c} index={i} />
-            ))}
+          <div className="mt-14 space-y-12">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+              {companies.slice(0, 5).map((c, i) => (
+                <CompanyCard key={c.slug} company={c} index={i} />
+              ))}
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+              {companies.slice(5, 10).map((c, i) => (
+                <CompanyCard key={c.slug} company={c} index={i} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
