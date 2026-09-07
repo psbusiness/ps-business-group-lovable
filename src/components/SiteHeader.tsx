@@ -101,17 +101,26 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-10 text-sm" aria-label="Principal">
-          <Link
-            to="/"
-            className={`${linkBase} transition-colors duration-300 ${
-              isHome && !activeSection ? linkActive : ""
-            }`}
-            activeProps={{ "aria-current": activeSection ? "false" : "page" }}
-            activeOptions={{ exact: true }}
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            {t("nav.home")}
-          </Link>
+          {isHome ? (
+            <a
+              href="/"
+              aria-current={!activeSection ? "true" : undefined}
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                window.history.replaceState(null, "", "/");
+              }}
+              className={`${linkBase} transition-colors duration-300 ${
+                !activeSection ? linkActive : ""
+              }`}
+            >
+              {t("nav.home")}
+            </a>
+          ) : (
+            <Link to="/" className={`${linkBase} transition-colors duration-300`}>
+              {t("nav.home")}
+            </Link>
+          )}
           {navItems.map((item) => (
             <a
               key={item.id}
