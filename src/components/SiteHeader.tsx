@@ -106,7 +106,7 @@ export function SiteHeader() {
             className={`${linkBase} transition-colors duration-300 ${
               isHome && !activeSection ? linkActive : ""
             }`}
-            activeProps={{ "aria-current": activeSection ? undefined : "page" }}
+            activeProps={{ "aria-current": activeSection ? "false" : "page" }}
             activeOptions={{ exact: true }}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
