@@ -13,7 +13,7 @@ export function useActiveSection(ids: string[], enabled = true) {
     }
 
     const compute = () => {
-      const offset = 120;
+      const offset = 170;
       let current: string | null = null;
       for (const id of ids) {
         const el = document.getElementById(id);
