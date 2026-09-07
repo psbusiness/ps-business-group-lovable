@@ -123,7 +123,7 @@ export const companies: Company[] = [
       "Estúdio jurídico boutique focado em soluções estratégicas, consultoria empresarial e direito de alta complexidade.",
     descriptionEs:
       "Estudio jurídico boutique enfocado en soluciones estratégicas, consultoría empresarial y derecho de alta complejidad.",
-    url: "https://sites.google.com/view/libertareestudiojurdico/inicio",
+    url: "https://libertare.lovable.app/",
     logo: libertareLogo,
     logoBg: "light",
   },
