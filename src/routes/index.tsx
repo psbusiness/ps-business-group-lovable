@@ -5,6 +5,7 @@ import { z } from "zod";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { CompanyCard } from "@/components/CompanyCard";
+import { BackToTop } from "@/components/BackToTop";
 import { companies } from "@/data/companies";
 import { useT } from "@/i18n";
 
@@ -108,7 +109,7 @@ function HomePage() {
 
       {/* HERO */}
       <section
-        id="inicio"
+        id="conteudo"
         className="relative bg-noir text-foreground overflow-hidden min-h-[100svh] flex items-center scroll-mt-24"
       >
         <div
@@ -419,6 +420,7 @@ function HomePage() {
       <ContactSection />
 
       <SiteFooter />
+      <BackToTop />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { BackToTop } from "@/components/BackToTop";
 import { useT } from "@/i18n";
 
 export function LegalLayout({
@@ -49,6 +50,7 @@ export function LegalLayout({
         </div>
       </section>
       <SiteFooter />
+      <BackToTop />
     </div>
   );
 }
