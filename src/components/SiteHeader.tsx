@@ -1,18 +1,23 @@
-import { Link, useLocation } from "@tanstack/react-router";
+import { Link, useLocation, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/ps-logo-official.png";
 import { useT } from "@/i18n";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { useActiveSection } from "@/hooks/useActiveSection";
+
+const SECTIONS = ["sobre", "empresas", "contato"];
 
 export function SiteHeader() {
   const { t } = useT();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
-  const heroIsDark = pathname === "/";
-  const onDark = heroIsDark && !scrolled;
+  const isHome = pathname === "/";
+  const onDark = isHome && !scrolled;
+  const activeSection = useActiveSection(SECTIONS, isHome);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -25,10 +30,44 @@ export function SiteHeader() {
     setOpen(false);
   }, [pathname]);
 
+  // Lock body scroll while the mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  // Close the mobile menu with Escape
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  const goToSection = (e: React.MouseEvent, id: string) => {
+    setOpen(false);
+    if (!isHome) return; // let the browser navigate to /#id
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState(null, "", `/#${id}`);
+  };
+
   const linkBase = onDark
     ? "text-white/60 hover:text-white"
     : "text-muted-foreground hover:text-foreground";
   const linkActive = onDark ? "text-white font-medium" : "text-foreground font-medium";
+
+  const navItems = [
+    { id: "sobre", label: t("nav.about") },
+    { id: "empresas", label: t("nav.companies") },
+    { id: "contato", label: t("nav.contact") },
+  ];
 
   return (
     <header
@@ -36,6 +75,13 @@ export function SiteHeader() {
         scrolled ? "glass border-b border-border/40" : "bg-transparent"
       }`}
     >
+      <a
+        href="#conteudo"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-background focus:px-4 focus:py-2 focus:text-sm focus:text-foreground"
+      >
+        {t("nav.skip")}
+      </a>
+
       <div className="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
           <img
@@ -55,30 +101,36 @@ export function SiteHeader() {
           </div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-10 text-sm">
+        <nav className="hidden md:flex items-center gap-10 text-sm" aria-label="Principal">
           <Link
             to="/"
-            className={`${linkBase} transition-colors duration-300`}
-            activeProps={{ className: linkActive }}
-            activeOptions={{ exact: true }}
+            className={`${linkBase} transition-colors duration-300 ${
+              isHome && !activeSection ? linkActive : ""
+            }`}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             {t("nav.home")}
           </Link>
-          <a href="/#empresas" className={`${linkBase} transition-colors duration-300`}>
-            {t("nav.companies")}
-          </a>
-          <a href="/#sobre" className={`${linkBase} transition-colors duration-300`}>
-            {t("nav.about")}
-          </a>
-          <a href="/#contato" className={`${linkBase} transition-colors duration-300`}>
-            {t("nav.contact")}
-          </a>
+          {navItems.map((item) => (
+            <a
+              key={item.id}
+              href={`/#${item.id}`}
+              onClick={(e) => goToSection(e, item.id)}
+              aria-current={activeSection === item.id ? "true" : undefined}
+              className={`${linkBase} transition-colors duration-300 ${
+                activeSection === item.id ? linkActive : ""
+              }`}
+            >
+              {item.label}
+            </a>
+          ))}
         </nav>
 
         <div className="hidden md:flex items-center gap-6">
           <LanguageSwitcher onDark={onDark} />
           <a
             href="/#contato"
+            onClick={(e) => goToSection(e, "contato")}
             className={`inline-flex items-center gap-2 text-sm px-5 py-2.5 transition-all duration-300 border ${
               onDark
                 ? "border-gold-soft/40 text-gold-soft hover:bg-gold-soft/10 hover:border-gold-soft/60"
@@ -92,8 +144,9 @@ export function SiteHeader() {
 
         <button
           type="button"
-          aria-label={t("nav.openMenu")}
+          aria-label={open ? t("nav.closeMenu") : t("nav.openMenu")}
           aria-expanded={open}
+          aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
           className={`md:hidden inline-flex items-center justify-center h-10 w-10 ${onDark ? "text-white" : "text-foreground"}`}
         >
@@ -102,30 +155,34 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div className="md:hidden glass border-t border-border/40">
-          <nav className="px-6 py-6 flex flex-col gap-5 text-base">
+        <div id="mobile-nav" className="md:hidden glass border-t border-border/40">
+          <nav className="px-6 py-6 flex flex-col gap-5 text-base" aria-label="Principal (mobile)">
             <Link
               to="/"
               className="text-foreground"
               activeProps={{ className: "text-foreground font-medium" }}
               activeOptions={{ exact: true }}
+              onClick={() => setOpen(false)}
             >
               {t("nav.home")}
             </Link>
-            <a href="/#empresas" className="text-foreground" onClick={() => setOpen(false)}>
-              {t("nav.companies")}
-            </a>
-            <a href="/#sobre" className="text-foreground" onClick={() => setOpen(false)}>
-              {t("nav.about")}
-            </a>
-            <a href="/#contato" className="text-foreground" onClick={() => setOpen(false)}>
-              {t("nav.contact")}
-            </a>
+            {navItems.map((item) => (
+              <a
+                key={item.id}
+                href={`/#${item.id}`}
+                className={
+                  activeSection === item.id ? "text-foreground font-medium" : "text-foreground/70"
+                }
+                onClick={(e) => goToSection(e, item.id)}
+              >
+                {item.label}
+              </a>
+            ))}
             <div className="pt-2 flex items-center justify-between">
               <LanguageSwitcher />
               <a
                 href="/#contato"
-                onClick={() => setOpen(false)}
+                onClick={(e) => goToSection(e, "contato")}
                 className="inline-flex items-center justify-center gap-2 bg-gold-gradient text-primary-foreground px-5 py-3 text-sm uppercase tracking-[0.2em]"
               >
                 {t("nav.cta")} →
