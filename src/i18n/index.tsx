@@ -14,6 +14,7 @@ const pt: Dict = {
   "nav.openMenu": "Abrir menu",
   "nav.closeMenu": "Fechar menu",
   "nav.backToTop": "Voltar ao topo",
+  "nav.skip": "Ir para o conteúdo",
   // Common
   "tag.group": "Grupo empresarial",
   "tag.principles": "Princípios",
@@ -163,6 +164,7 @@ const es: Dict = {
   "nav.openMenu": "Abrir menú",
   "nav.closeMenu": "Cerrar menú",
   "nav.backToTop": "Volver arriba",
+  "nav.skip": "Ir al contenido",
   "tag.group": "Grupo empresarial",
   "tag.principles": "Principios",
   "tag.companies": "Empresas",
