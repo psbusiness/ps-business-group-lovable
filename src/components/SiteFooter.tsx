@@ -15,7 +15,7 @@ export function SiteFooter() {
             <div className="flex items-center gap-4 mb-6">
               <img src={logo} alt="PS Business Group" className="h-12 w-12 object-contain" />
               <div>
-                <div className="font-display text-lg">PS Business Group</div>
+                <div className="font-display text-lg text-gold-soft">PS BUSINESS</div>
                 <div className="text-[9px] uppercase tracking-[0.3em] text-foreground/40">
                   {t("footer.subtitle")}
                 </div>
