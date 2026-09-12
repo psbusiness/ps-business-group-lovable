@@ -88,13 +88,9 @@ export function SiteHeader() {
             alt="PS Business Group"
             className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-105"
           />
-          <div className={`leading-tight ${onDark ? "text-white" : "text-foreground"}`}>
-            <div className="font-display text-base tracking-wide">PS Business</div>
-            <div
-              className={`text-[9px] uppercase tracking-[0.3em] ${
-                onDark ? "text-white/50" : "text-muted-foreground"
-              }`}
-            >
+          <div className="leading-tight text-gold-soft">
+            <div className="font-display text-base tracking-wide normal-case">PS Business</div>
+            <div className="text-[9px] uppercase tracking-[0.3em] text-gold-soft/60">
               Group
             </div>
           </div>
