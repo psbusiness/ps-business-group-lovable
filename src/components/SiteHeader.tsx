@@ -1,7 +1,7 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/ps-logo-horizontal.png.asset.json";
+import logo from "@/assets/ps-logo-official.png";
 import { useT } from "@/i18n";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useActiveSection } from "@/hooks/useActiveSection";
@@ -82,12 +82,18 @@ export function SiteHeader() {
       </a>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
-        <Link to="/" className="flex items-center group">
+        <Link to="/" className="flex items-center gap-3 group">
           <img
-            src={logo.url}
+            src={logo}
             alt="PS Business Group"
-            className="h-9 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-105"
           />
+          <div className="leading-tight text-gold-soft">
+            <div className="font-display text-base tracking-[0.15em] uppercase">PS BUSINESS</div>
+            <div className="text-[9px] uppercase tracking-[0.3em] text-gold-soft/60">
+              Group
+            </div>
+          </div>
         </Link>
 
         <nav className="hidden md:flex items-center gap-10 text-sm" aria-label="Principal">
