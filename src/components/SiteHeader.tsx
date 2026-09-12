@@ -89,7 +89,7 @@ export function SiteHeader() {
             className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-105"
           />
           <div className="leading-tight text-gold-soft">
-            <div className="font-display text-base tracking-wide normal-case">PS Business</div>
+            <div className="font-display text-base tracking-[0.15em] uppercase">PS BUSINESS</div>
             <div className="text-[9px] uppercase tracking-[0.3em] text-gold-soft/60">
               Group
             </div>
