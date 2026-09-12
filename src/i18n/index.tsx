@@ -141,7 +141,7 @@ const pt: Dict = {
   "footer.legalNotice": "Aviso Legal",
   "footer.rights": "Todos os direitos reservados.",
   "footer.building": "Construindo presença.",
-  "footer.subtitle": "Grupo empresarial",
+  "footer.subtitle": "GROUP",
   // Cookies
   "cookies.text":
     "Utilizamos cookies para melhorar sua experiência, analisar o tráfego e personalizar conteúdo, conforme a Lei Geral de Proteção de Dados (LGPD).",
@@ -285,7 +285,7 @@ const es: Dict = {
   "footer.legalNotice": "Aviso Legal",
   "footer.rights": "Todos los derechos reservados.",
   "footer.building": "Construyendo presencia.",
-  "footer.subtitle": "Grupo empresarial",
+  "footer.subtitle": "GROUP",
   "cookies.text":
     "Utilizamos cookies para mejorar tu experiencia, analizar el tráfico y personalizar contenido, conforme a las leyes de protección de datos vigentes (LGPD / Ley N° 6.534/20 PY).",
   "cookies.accept": "Aceptar",
