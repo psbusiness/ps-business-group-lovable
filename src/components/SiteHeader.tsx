@@ -82,18 +82,12 @@ export function SiteHeader() {
       </a>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center group">
           <img
-            src={logo}
+            src={logo.url}
             alt="PS Business Group"
-            className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-105"
+            className="h-9 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
           />
-          <div className="leading-tight text-gold-soft">
-            <div className="font-display text-base tracking-[0.15em] uppercase">PS BUSINESS</div>
-            <div className="text-[9px] uppercase tracking-[0.3em] text-gold-soft/60">
-              Group
-            </div>
-          </div>
         </Link>
 
         <nav className="hidden md:flex items-center gap-10 text-sm" aria-label="Principal">
