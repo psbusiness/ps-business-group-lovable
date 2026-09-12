@@ -1,7 +1,7 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/ps-logo-official.png";
+import logo from "@/assets/ps-logo-horizontal.png.asset.json";
 import { useT } from "@/i18n";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useActiveSection } from "@/hooks/useActiveSection";
