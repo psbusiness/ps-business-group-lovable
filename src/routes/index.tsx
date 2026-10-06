@@ -110,7 +110,7 @@ function HomePage() {
       {/* HERO */}
       <section
         id="conteudo"
-        className="relative bg-noir text-foreground overflow-hidden min-h-[100svh] flex items-center scroll-mt-24"
+        className="relative bg-noir text-foreground overflow-hidden min-h-[100svh] flex items-center -scroll-mt-4"
       >
         <div
           className="absolute inset-0 bg-cover bg-center scale-105"
@@ -240,7 +240,7 @@ function HomePage() {
       </section>
 
       {/* SOBRE */}
-      <section id="sobre" className="bg-cream py-28 lg:py-36 scroll-mt-24">
+      <section id="sobre" className="bg-cream py-28 lg:py-36 -scroll-mt-4">
         <div className="max-w-6xl mx-auto px-6 lg:px-12">
           <motion.div
             initial="hidden"
@@ -333,7 +333,7 @@ function HomePage() {
       </section>
 
       {/* EMPRESAS */}
-      <section id="empresas" className="py-28 lg:py-36 scroll-mt-24">
+      <section id="empresas" className="py-28 lg:py-36 -scroll-mt-4">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div
             initial="hidden"
@@ -498,7 +498,7 @@ function ContactSection() {
   return (
     <section
       id="contato"
-      className="bg-noir text-foreground py-28 lg:py-36 scroll-mt-24"
+      className="bg-noir text-foreground py-28 lg:py-36 -scroll-mt-4"
       aria-labelledby="contato-heading"
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
