@@ -24,7 +24,7 @@ export function CompanyCard({ company, index }: { company: Company; index: numbe
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay: (index % 5) * 0.08, ease: [0.22, 1, 0.36, 1] as const }}
-      className="group relative flex h-full flex-col bg-card shadow-card transition-all duration-500 overflow-hidden p-5 sm:p-6 md:p-4 lg:p-5"
+      className="group relative flex h-full flex-col bg-card shadow-card border border-transparent hover:border-gold/20 transition-all duration-500 overflow-hidden p-5 sm:p-6 md:p-4 lg:p-5"
     >
       {/* Top meta */}
       <div className="flex items-start justify-between mb-4 md:mb-4 gap-2">

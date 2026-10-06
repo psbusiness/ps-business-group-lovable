@@ -86,7 +86,7 @@ export function SiteHeader() {
           <img
             src={logo}
             alt="PS Business Group"
-            className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-105"
+            className="h-12 w-12 object-contain select-none transition-transform duration-300 group-hover:scale-105"
           />
           <div className="leading-tight text-gold-soft">
             <div className="font-display text-base tracking-[0.15em] uppercase">PS BUSINESS</div>
