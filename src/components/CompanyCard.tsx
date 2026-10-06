@@ -37,7 +37,7 @@ export function CompanyCard({ company, index }: { company: Company; index: numbe
       </div>
 
       {/* Logo — fixed height so every card aligns */}
-      <div className="flex h-24 sm:h-28 md:h-20 lg:h-28 items-center justify-center mb-4 md:mb-4 lg:mb-5">
+      <div className="flex h-32 sm:h-36 md:h-28 lg:h-36 items-center justify-center mb-4 md:mb-4 lg:mb-5">
         {company.logo ? (
           <img
             src={company.logo}
@@ -47,7 +47,7 @@ export function CompanyCard({ company, index }: { company: Company; index: numbe
           />
         ) : (
           <div
-            className="flex h-16 w-16 md:h-14 md:w-14 lg:h-20 lg:w-20 items-center justify-center rounded-full border border-gold/30 text-foreground/60 font-display text-lg md:text-base lg:text-xl tracking-wider"
+            className="flex h-24 w-24 md:h-20 md:w-20 lg:h-28 lg:w-28 items-center justify-center rounded-full border border-gold/30 text-foreground/60 font-display text-xl md:text-lg lg:text-2xl tracking-wider"
             aria-label={lang === "es" ? `Iniciales ${company.name}` : `Iniciais ${company.name}`}
           >
             {getInitials(company.name)}
