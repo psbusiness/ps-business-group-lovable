@@ -172,7 +172,7 @@ function HomePage() {
             >
               <a
                 href="#empresas"
-                className="group inline-flex items-center gap-3 bg-gold-gradient text-primary-foreground px-8 py-4 text-sm uppercase tracking-[0.2em] hover:shadow-gold transition-all duration-500"
+                className="group inline-flex items-center gap-3 bg-gold-gradient text-primary-foreground px-8 py-4 text-sm uppercase tracking-[0.2em] hover:shadow-gold transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-soft"
               >
                 {t("home.hero.ctaCompanies")}
                 <span className="transition-transform duration-300 group-hover:translate-x-1">
@@ -181,7 +181,7 @@ function HomePage() {
               </a>
               <a
                 href="#sobre"
-                className="inline-flex items-center gap-3 border border-white/30 text-white px-8 py-4 text-sm uppercase tracking-[0.2em] hover:bg-white/8 hover:border-gold-soft/60 transition-all duration-500"
+                className="inline-flex items-center gap-3 border border-white/30 text-white px-8 py-4 text-sm uppercase tracking-[0.2em] hover:bg-white/8 hover:border-gold-soft/60 transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-soft"
               >
                 {t("home.hero.ctaAbout")}
               </a>
@@ -568,7 +568,7 @@ function ContactSection() {
                 maxLength={2000}
                 aria-invalid={!!errors.msg}
                 aria-describedby={errors.msg ? "msg-error" : undefined}
-                className="w-full bg-transparent border-b border-white/20 focus:border-gold-soft outline-none py-3 text-base resize-none transition-colors duration-300"
+                className="w-full bg-transparent border-b border-white/20 focus:border-gold-soft outline-none py-3 text-base resize-none transition-colors duration-300 placeholder:text-foreground/30"
               />
               {errors.msg && (
                 <p id="msg-error" className="mt-2 text-xs text-destructive">
