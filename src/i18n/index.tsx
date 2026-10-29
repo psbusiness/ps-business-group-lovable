@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { en } from "./en";
 
-export type Lang = "pt" | "es";
+export type Lang = "pt" | "es" | "en";
 
 type Dict = Record<string, string>;
 
@@ -15,6 +16,12 @@ const pt: Dict = {
   "nav.closeMenu": "Fechar menu",
   "nav.backToTop": "Voltar ao topo",
   "nav.skip": "Ir para o conteúdo",
+  "nav.main": "Principal",
+  "nav.mobile": "Principal (mobile)",
+  "companies.visit": "Visitar",
+  "companies.initials": "Iniciais",
+  "notFound.title": "Página não encontrada",
+  "notFound.description": "O conteúdo que você procura não existe ou foi movido.",
   // Common
   "tag.group": "Grupo empresarial",
   "tag.principles": "Princípios",
@@ -165,6 +172,12 @@ const es: Dict = {
   "nav.closeMenu": "Cerrar menú",
   "nav.backToTop": "Volver arriba",
   "nav.skip": "Ir al contenido",
+  "nav.main": "Principal",
+  "nav.mobile": "Principal (móvil)",
+  "companies.visit": "Visitar sitio",
+  "companies.initials": "Iniciales",
+  "notFound.title": "Página no encontrada",
+  "notFound.description": "El contenido que buscás no existe o fue movido.",
   "tag.group": "Grupo empresarial",
   "tag.principles": "Principios",
   "tag.companies": "Empresas",
@@ -297,7 +310,7 @@ const es: Dict = {
   "img.handshake": "Alianza estratégica PS Business Group",
 };
 
-const dicts: Record<Lang, Dict> = { pt, es };
+export const dicts: Record<Lang, Dict> = { pt, es, en };
 
 type Ctx = { lang: Lang; setLang: (l: Lang) => void; t: (k: string) => string };
 const LangCtx = createContext<Ctx>({ lang: "pt", setLang: () => {}, t: (k) => k });
@@ -308,7 +321,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     try {
       const saved = localStorage.getItem("ps-lang") as Lang | null;
-      if (saved === "pt" || saved === "es") setLangState(saved);
+      if (saved === "pt" || saved === "es" || saved === "en") setLangState(saved);
     } catch {
       // ignore
     }
@@ -316,7 +329,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (typeof document !== "undefined") {
-      document.documentElement.lang = lang === "pt" ? "pt-BR" : "es-PY";
+      document.documentElement.lang = { pt: "pt-BR", es: "es-PY", en: "en" }[lang];
     }
   }, [lang]);
 

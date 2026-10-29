@@ -96,7 +96,7 @@ export function SiteHeader() {
           </div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-10 text-sm" aria-label="Principal">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-10 text-sm" aria-label={t("nav.main")}>
           {isHome ? (
             <a
               href="/"
@@ -132,7 +132,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-3 lg:gap-6">
           <LanguageSwitcher onDark={onDark} />
           <a
             href="/#contato"
@@ -162,7 +162,7 @@ export function SiteHeader() {
 
       {open && (
         <div id="mobile-nav" className="md:hidden glass border-t border-border/40">
-          <nav className="px-6 py-6 flex flex-col gap-5 text-base" aria-label="Principal (mobile)">
+          <nav className="px-6 py-6 flex flex-col gap-5 text-base" aria-label={t("nav.mobile")}>
             <Link
               to="/"
               className="text-foreground"
