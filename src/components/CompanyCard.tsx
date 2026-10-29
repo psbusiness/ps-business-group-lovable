@@ -12,9 +12,9 @@ function getInitials(name: string): string {
 }
 
 export function CompanyCard({ company, index }: { company: Company; index: number }) {
-  const { lang } = useT();
-  const sector = lang === "es" ? company.sectorEs : company.sector;
-  const description = lang === "es" ? company.descriptionEs : company.description;
+  const { lang, t } = useT();
+  const sector = lang === "en" ? company.sectorEn : lang === "es" ? company.sectorEs : company.sector;
+  const description = lang === "en" ? company.descriptionEn : lang === "es" ? company.descriptionEs : company.description;
   return (
     <motion.a
       href={company.url}
@@ -48,7 +48,7 @@ export function CompanyCard({ company, index }: { company: Company; index: numbe
         ) : (
           <div
             className="flex h-24 w-24 md:h-20 md:w-20 lg:h-28 lg:w-28 items-center justify-center rounded-full border border-gold/30 text-foreground/60 font-display text-xl md:text-lg lg:text-2xl tracking-wider"
-            aria-label={lang === "es" ? `Iniciales ${company.name}` : `Iniciais ${company.name}`}
+            aria-label={`${t("companies.initials")} ${company.name}`}
           >
             {getInitials(company.name)}
           </div>
@@ -63,7 +63,7 @@ export function CompanyCard({ company, index }: { company: Company; index: numbe
         </p>
 
         <div className="mt-4 md:mt-3 lg:mt-4 flex items-center gap-2 text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-gold-soft">
-          <span>{lang === "es" ? "Visitar sitio" : "Visitar"}</span>
+          <span>{t("companies.visit")}</span>
           <span className="h-px w-6 bg-gold-soft transition-all duration-500 group-hover:w-12" />
         </div>
       </div>

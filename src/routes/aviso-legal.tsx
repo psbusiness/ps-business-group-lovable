@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LegalLayout } from "@/components/LegalLayout";
 import { useT } from "@/i18n";
+import { NoticeEn } from "@/i18n/legal-en";
 
 export const Route = createFileRoute("/aviso-legal")({
   head: () => ({
@@ -12,6 +13,10 @@ export const Route = createFileRoute("/aviso-legal")({
           "Aviso Legal do PS Business Group — identificação institucional, finalidade do site, marcas, propriedade intelectual e conformidade regulatória.",
       },
       { name: "robots", content: "index, follow" },
+      { property: "og:title", content: "Aviso Legal — PS Business Group" },
+      { property: "og:description", content: "Identificação institucional, marcas e conformidade do PS Business Group." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
     links: [{ rel: "canonical", href: "https://psbusiness.lovable.app/aviso-legal" }],
   }),
@@ -20,6 +25,7 @@ export const Route = createFileRoute("/aviso-legal")({
 
 function AvisoLegalPage() {
   const { lang } = useT();
+  if (lang === "en") return <NoticeEn />;
   if (lang === "es") return <Es />;
   return <Pt />;
 }

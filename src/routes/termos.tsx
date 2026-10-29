@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LegalLayout } from "@/components/LegalLayout";
 import { useT } from "@/i18n";
+import { TermsEn } from "@/i18n/legal-en";
 
 export const Route = createFileRoute("/termos")({
   head: () => ({
@@ -12,6 +13,10 @@ export const Route = createFileRoute("/termos")({
           "Termos e Condições de Uso do site institucional do PS Business Group — direitos, deveres, propriedade intelectual e foro aplicável.",
       },
       { name: "robots", content: "index, follow" },
+      { property: "og:title", content: "Termos de Uso — PS Business Group" },
+      { property: "og:description", content: "Condições de uso, direitos e deveres no site do PS Business Group." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
     links: [{ rel: "canonical", href: "https://psbusiness.lovable.app/termos" }],
   }),
@@ -20,6 +25,7 @@ export const Route = createFileRoute("/termos")({
 
 function TermosPage() {
   const { lang } = useT();
+  if (lang === "en") return <TermsEn />;
   if (lang === "es") return <Es />;
   return <Pt />;
 }

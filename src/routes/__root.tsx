@@ -1,25 +1,26 @@
 import { Outlet, createRootRoute, HeadContent, Scripts, Link } from "@tanstack/react-router";
-import { LanguageProvider } from "@/i18n";
+import { LanguageProvider, useT } from "@/i18n";
 import { CookieBanner } from "@/components/CookieBanner";
 import { Analytics } from "@/components/Analytics";
 
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
+  const { t } = useT();
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <div className="font-display text-7xl text-gold">404</div>
-        <h2 className="mt-4 font-display text-2xl">Página não encontrada</h2>
+        <h2 className="mt-4 font-display text-2xl">{t("notFound.title")}</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          O conteúdo que você procura não existe ou foi movido.
+          {t("notFound.description")}
         </p>
         <div className="mt-8">
           <Link
             to="/"
             className="inline-flex items-center gap-2 border border-foreground px-6 py-3 text-sm hover:bg-foreground hover:text-background transition-all"
           >
-            Voltar ao início <span>→</span>
+            {t("legal.back")} <span>→</span>
           </Link>
         </div>
       </div>
@@ -50,16 +51,6 @@ export const Route = createRootRoute({
       {
         name: "twitter:description",
         content: "PS Business Group — site editorial moderno do grupo empresarial.",
-      },
-      {
-        property: "og:image",
-        content:
-          "https://storage.googleapis.com/gpt-engineer-file-uploads/Vp46e3IjKETKAi2tCDp1ZEMcc382/social-images/social-1776567463821-Oficial_-_PS_Business_Group_-_Horizontal.webp",
-      },
-      {
-        name: "twitter:image",
-        content:
-          "https://storage.googleapis.com/gpt-engineer-file-uploads/Vp46e3IjKETKAi2tCDp1ZEMcc382/social-images/social-1776567463821-Oficial_-_PS_Business_Group_-_Horizontal.webp",
       },
       { name: "robots", content: "index, follow" },
       { name: "theme-color", content: "#000000" },

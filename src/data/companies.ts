@@ -14,8 +14,10 @@ export type Company = {
   name: string;
   sector: string;
   sectorEs: string;
+  sectorEn: string;
   description: string;
   descriptionEs: string;
+  descriptionEn: string;
   url: string;
   logo?: string;
   logoBg?: "light" | "dark";
@@ -25,6 +27,8 @@ export type Company = {
 export const companies: Company[] = [
   {
     slug: "liore",
+    sectorEn: "Logistics & Transport",
+    descriptionEn: "Integrated logistics solutions focused on agility, traceability and operational excellence nationwide.",
     name: "Liore Logística",
     sector: "Logística & Transporte",
     sectorEs: "Logística & Transporte",
@@ -38,6 +42,8 @@ export const companies: Company[] = [
   },
   {
     slug: "agricola-santo-cristo",
+    sectorEn: "Agribusiness",
+    descriptionEn: "High-performance agricultural production, combining rural tradition with technology and sustainable farming practices.",
     name: "Agrícola Santo Cristo",
     sector: "Agronegócio",
     sectorEs: "Agronegocio",
@@ -51,6 +57,8 @@ export const companies: Company[] = [
   },
   {
     slug: "novus-mundi",
+    sectorEn: "Education",
+    descriptionEn: "Transformative education that prepares global leaders through an international curriculum and holistic personal development.",
     name: "Novus Mundi",
     sector: "Educação",
     sectorEs: "Educación",
@@ -64,6 +72,8 @@ export const companies: Company[] = [
   },
   {
     slug: "legionis",
+    sectorEn: "Sports & Performance",
+    descriptionEn: "Management and development of high-performance athletes, connecting talent, science and the sports industry.",
     name: "Legionis Sports",
     sector: "Esporte & Performance",
     sectorEs: "Deporte & Rendimiento",
@@ -77,6 +87,8 @@ export const companies: Company[] = [
   },
   {
     slug: "stella-aurea",
+    sectorEn: "Capital Management",
+    descriptionEn: "Sophisticated asset allocation and long-term investments guided by discipline, analysis and strategic vision.",
     name: "Stella Aurea Capital",
     sector: "Gestão de Capital",
     sectorEs: "Gestión de Capital",
@@ -90,6 +102,8 @@ export const companies: Company[] = [
   },
   {
     slug: "horin",
+    sectorEn: "Real Estate",
+    descriptionEn: "Real estate developments with curated architecture and strategic locations for discerning investors and residents.",
     name: "Horin Real Estate",
     sector: "Imobiliário",
     sectorEs: "Inmobiliario",
@@ -103,6 +117,8 @@ export const companies: Company[] = [
   },
   {
     slug: "vincere-travel",
+    sectorEn: "Travel & Experiences",
+    descriptionEn: "Tailor-made travel and distinctive experiences around the world for clients seeking the extraordinary.",
     name: "Vincere Travel",
     sector: "Viagens & Experiências",
     sectorEs: "Viajes & Experiencias",
@@ -116,6 +132,8 @@ export const companies: Company[] = [
   },
   {
     slug: "libertare",
+    sectorEn: "Legal Services",
+    descriptionEn: "A boutique law firm focused on strategic solutions, business advisory and complex legal matters.",
     name: "Libertare",
     sector: "Jurídico",
     sectorEs: "Jurídico",
@@ -129,6 +147,8 @@ export const companies: Company[] = [
   },
   {
     slug: "pro96",
+    sectorEn: "Automotive",
+    descriptionEn: "Premium care for high-end vehicles, combining technical expertise, aesthetics and performance.",
     name: "Pro96 Automotive",
     sector: "Automotivo",
     sectorEs: "Automotor",
@@ -142,6 +162,8 @@ export const companies: Company[] = [
   },
   {
     slug: "white-tiger",
+    sectorEn: "Lifestyle & Brand",
+    descriptionEn: "An independent brand with a strong identity, bringing design, attitude and presence to products that embody performance and style.",
     name: "White Tiger",
     sector: "Lifestyle & Marca",
     sectorEs: "Lifestyle & Marca",
