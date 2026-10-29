@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LegalLayout } from "@/components/LegalLayout";
 import { useT } from "@/i18n";
+import { PrivacyEn } from "@/i18n/legal-en";
 
 export const Route = createFileRoute("/privacidade")({
   head: () => ({
@@ -12,6 +13,10 @@ export const Route = createFileRoute("/privacidade")({
           "Política de Privacidade do PS Business Group em conformidade com a LGPD (Lei 13.709/2018), Marco Civil da Internet e Ley N° 6.534/20 do Paraguai.",
       },
       { name: "robots", content: "index, follow" },
+      { property: "og:title", content: "Política de Privacidade — PS Business Group" },
+      { property: "og:description", content: "Privacidade e proteção de dados do PS Business Group no Brasil e Paraguai." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
     links: [{ rel: "canonical", href: "https://psbusiness.lovable.app/privacidade" }],
   }),
@@ -20,6 +25,7 @@ export const Route = createFileRoute("/privacidade")({
 
 function PrivacidadePage() {
   const { lang } = useT();
+  if (lang === "en") return <PrivacyEn />;
   if (lang === "es") return <Es />;
   return <Pt />;
 }
