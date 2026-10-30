@@ -5,13 +5,13 @@ import { setResponseHeaders } from "@tanstack/react-start/server";
 const securityHeaders = createMiddleware().server(async ({ next }) => {
   try {
     setResponseHeaders({
-      "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
-      "X-Content-Type-Options": "nosniff",
-      "X-Frame-Options": "SAMEORIGIN",
-      "Referrer-Policy": "strict-origin-when-cross-origin",
-      "Permissions-Policy": "camera=(), microphone=(), geolocation=(), interest-cohort=()",
-      "X-XSS-Protection": "0",
-      "Content-Security-Policy": [
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "SAMEORIGIN",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+      "x-xss-protection": "0",
+      "content-security-policy": [
         "default-src 'self'",
         "base-uri 'self'",
         "object-src 'none'",
